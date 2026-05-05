@@ -15,7 +15,7 @@
     "packageName": "com.example.gamename",
     "pixelsRounding": false,
     "projectUuid": "92db088c-dba8-409b-86d8-803440e94c6b",
-    "scaleMode": "linear",
+    "scaleMode": "nearest",
     "sizeOnStartupMode": "",
     "templateSlug": "",
     "version": "1.0.0",
@@ -98,7 +98,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/adf2c5bec6a431d235f93909132e18c86d8b50c9d5718fac3faf915fcccfe754-Player Sprite.png",
@@ -110,7 +110,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Barrier.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/8525c6d43930281536c4bffa8bb5c148b90ede3d13da77f3710c97a48996810b-Barrier.png",
@@ -122,7 +122,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Bullet Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/a0e4758ae2f5ab7fc532977d0f43c2fea1024de9522fedee72a802d662bcacb9-Bullet Sprite.png",
@@ -134,7 +134,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Watermelon Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/672356b4a7624bd83122068eb1740714d808a3637c2e1028b648bbe58f329ef3-Watermelon Sprite.png",
@@ -146,7 +146,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Watermelon Explosion Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/dddea26ef811d1660b722206e344bde89c32742309acc985e2410f92d0287383-Watermelon Explosion Sprite.png",
@@ -158,7 +158,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Orange Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/7e102d3e4626d7ddb6d4db598f702fd800f1fba6f0681b942cf561f59404c6cd-Orange Sprite.png",
@@ -170,7 +170,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Orange Explosion Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/2e32a215a09e0b0fdd94271bb3013891bab0c318e639db4e75a0a3f42a6472b9-Orange Explosion Sprite.png",
@@ -182,7 +182,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Strawberry Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/116e904dc7e435a4c41194e8bb6a6fc244c6ab30a65a603529b4bc9f5f403476-Strawberry Sprite.png",
@@ -194,7 +194,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Strawberry Explosion Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/86d15c870338e22e0599672cfb8893d0d887f20cf35e79e9ae7c9fa749ea00ca-Strawberry Explosion Sprite.png",
@@ -206,7 +206,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Health Bar Back Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/2bd62c7e003bfc74131509a243f5cc915060d6303ddb0bd44a0f501308ca9370-Health Bar Back Sprite.png",
@@ -218,7 +218,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Health Bar Front.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/8f762f132a58f9860e80e4533ee49f796154bb8f630810dfbbb0c43108583640-Health Bar Front.png",
@@ -253,7 +253,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Shot Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/0d8eb8213907bb94b99793ae75a1799ddda09caa054de81d8c3af76651144304-Player Shot Sprite.png",
@@ -265,7 +265,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Infinite Ammo Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/7900ea4f53a98b39871f66d3d4e597c764343435702497abd467c336bde401d4-Player Infinite Ammo Sprite.png",
@@ -277,7 +277,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Infinite Ammo Shot Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/9b4cc6d3e8aefcb264d90a1555f7a64c0b6f3f54750ba077d7bc21164d9dc04a-Player Infinite Ammo Shot Sprite.png",
@@ -289,7 +289,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Inifinite Ammo Power Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/b21e3b09206ab65d8d3f99150070065ef68e02f805942e2d92edfda2655828d1-Inifinite Ammo Power Sprite.png",
@@ -301,7 +301,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Infinity Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/aa8c8704c79ccfb0d129e5e1e65288dad895ced85c886e4d5cd10f6d9937752b-Infinity Sprite.png",
@@ -313,7 +313,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Infinity Logo Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/19ceabfd6c012f873d79838d48f63fc2180e03acb1ff7fb58114333a98e0838e-Infinity Logo Sprite.png",
@@ -325,7 +325,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Infinite Ammo New Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/831a140a96a841505226e4cc5d7d6517374f7bef8c23affa3110b60f3fa638d9-Player Infinite Ammo New Sprite.png",
@@ -337,7 +337,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Infinite Ammo Power New Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/ce56da75912f803e94bdefcab7cd84b5f797063a82f597120f500bce9252fe0f-Infinite Ammo Power New Sprite.png",
@@ -349,7 +349,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Shield Power Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/4eb599d927038d00b4f0efd9bcf8eeeb6753bb1945aab2c85db1ef1f36776a78-Shield Power Sprite.png",
@@ -361,7 +361,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Shield Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/13da15697a3d41ea44d53501df73196d0bed9d89e0591aa65bc8ae03f39bcab7-Player Shield Sprite.png",
@@ -373,7 +373,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Shield Shot Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/8ecf12c08c12478d0d5cd5fca2d23997cba05d4d7d0a8ae5843d958319874260-Player Shield Shot Sprite.png",
@@ -385,7 +385,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player New Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/55fe4fca16e43f2af8f06fccf480adc242a16403956b745379e2d28fcd391d40-Player New Sprite.png",
@@ -397,7 +397,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Skip Power Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/e98375242801c31b36e15ad68c9d4556bb2698db7155823937f4570d7b68f8f1-Time Skip Power Sprite.png",
@@ -409,7 +409,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Effect Top Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/7b7675b98a93bc770aab0ab87b5acd18f204b0f2443107caa798fe12a2815299-Time Effect Top Sprite.png",
@@ -421,7 +421,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Effect Bottom Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/0e3b8329910ab7affe014aff51e9297b3596fedc827b699e8caf7bc888b96192-Time Effect Bottom Sprite.png",
@@ -433,7 +433,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Time Skip Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/68075f6b218fcb5563e29edb05b1e3a4a415a85e482f50f804153d0369909183-Player Time Skip Sprite.png",
@@ -445,7 +445,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Player Time Skip Shot Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/a66d4029d835ecf8b4ebed81e1725d23f0af757d6de47f22d180a874366af529-Player Time Skip Shot Sprite.png",
@@ -485,7 +485,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Effect BottomNew Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/01f7e93051363629328236a4fcb6b47ab23cf9155dd4b248bc02f2917a7a92b5-Time Effect BottomNew Sprite.png",
@@ -497,7 +497,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Effect Top New Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/71fe7ccce4a3202360f78ffe7f294298cb77c435a00737c3ac48526677de8096-Time Effect Top New Sprite.png",
@@ -509,7 +509,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Play Button New Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/58688477d9bd285eda8373f1d19bb06dc1596e2c3f840754dcc00df45c5fdfd7-Play Button New Sprite.png",
@@ -521,7 +521,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Infinite Ammo Power Flash Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/6c826a0035d832b70b1713a73e7ce0c8cfb7e7fe59652ca1f66c248e447bac3f-Infinite Ammo Power Flash Sprite.png",
@@ -533,7 +533,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Shield Power Flash Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/f4288e6fa87f0db06dc2c921d7ef1f29f417c19a0e800272c7d95a17757ab3e5-Shield Power Flash Sprite.png",
@@ -545,7 +545,7 @@
         "kind": "image",
         "metadata": "",
         "name": "Time Power Flash Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/c01c8fff9c0c39390e48089d6df84f30a126368b405d49cfe356332fb7a52798-Time Power Flash Sprite.png",
@@ -557,7 +557,7 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\"}",
         "name": "Power Bar Back Sprite.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/4137b5c7fb501ef85b99c2d5c4a70bac0dec68381911421e29dbefef228e3a71-Power Bar Back Sprite.png",
@@ -569,7 +569,7 @@
         "kind": "image",
         "metadata": "{\"extension\":\".png\"}",
         "name": "Power Bar.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false,
         "origin": {
           "identifier": "https://project-resources.gdevelop.io/91a9900b-5516-45e7-a3ab-31ef06da7ee6/resources/b8b94ddec534f3e2033c2721fdef9a187056e90a1fd6f04909f86b3f0bb64db0-Power Bar.png",
@@ -581,7 +581,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/FruitBlast Menu.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -589,7 +589,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/Story_mode_Button-removebg-preview.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -597,7 +597,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/Endless-removebg-preview.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -605,7 +605,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/Card.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -613,7 +613,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/Exp Bar Front.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -621,7 +621,23 @@
         "kind": "image",
         "metadata": "",
         "name": "assets/Idle2.png",
-        "smoothed": true,
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ResourceBar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ResourceBar.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ResourceBarBack.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/ResourceBarBack.png",
+        "smoothed": false,
         "userAdded": false
       }
     ]
@@ -1300,7 +1316,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.0615714305220167,
+        "zoomFactor": 0.6040838749989,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1593,31 +1609,14 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 0,
-          "height": 558,
-          "keepRatio": true,
-          "layer": "",
-          "name": "expBarSprite",
-          "persistentUuid": "0db9b985-92b7-4cca-9391-bdc8c6215204",
-          "width": 558,
-          "x": 852,
-          "y": 394,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "depth": 1,
-          "height": 48,
+          "height": 40,
           "layer": "",
           "name": "expSprite",
           "persistentUuid": "5024b3c6-2dff-4592-9cd7-95a48bf41750",
           "width": 232,
-          "x": 1027,
-          "y": 649,
+          "x": 1006,
+          "y": 648,
           "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
@@ -1632,9 +1631,43 @@
           "name": "levelText",
           "persistentUuid": "1e2fd377-2427-4162-a8d7-1d94c4a6b531",
           "width": 0,
-          "x": 1032,
-          "y": 653,
+          "x": 1024,
+          "y": 647,
           "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 192,
+          "keepRatio": true,
+          "layer": "",
+          "name": "expBarSprite",
+          "persistentUuid": "75ee0b7c-02a1-4e38-ba13-a07fc63c20e0",
+          "width": 284,
+          "x": 980,
+          "y": 512,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 40,
+          "keepRatio": true,
+          "layer": "",
+          "name": "expBarBack",
+          "persistentUuid": "89dde4e5-970f-467f-8022-697fda25bbf8",
+          "width": 232,
+          "x": 1006,
+          "y": 648,
+          "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4444,17 +4477,16 @@
           ],
           "animations": [
             {
-              "name": "Idle",
+              "name": "",
               "useMultipleDirections": false,
               "directions": [
                 {
                   "looping": false,
-                  "metadata": "{\"pskl\":{}}",
                   "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets/Idle2.png",
+                      "image": "assets/ResourceBar.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4470,20 +4502,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 336,
-                            "y": 496
+                            "x": 0,
+                            "y": 111
                           },
                           {
-                            "x": 832,
-                            "y": 496
+                            "x": 256,
+                            "y": 111
                           },
                           {
-                            "x": 832,
-                            "y": 624
+                            "x": 256,
+                            "y": 192
                           },
                           {
-                            "x": 336,
-                            "y": 624
+                            "x": 0,
+                            "y": 192
                           }
                         ]
                       ]
@@ -4627,6 +4659,67 @@
             "lineHeight": 0,
             "color": "255;255;255"
           }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "expBarBack",
+          "persistentUuid": "eed0ab61-6d91-4706-842d-e96e41097284",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/ResourceBarBack.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 111
+                          },
+                          {
+                            "x": 256,
+                            "y": 111
+                          },
+                          {
+                            "x": 256,
+                            "y": 192
+                          },
+                          {
+                            "x": 0,
+                            "y": 192
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4658,6 +4751,9 @@
           },
           {
             "objectName": "expBarSprite"
+          },
+          {
+            "objectName": "expBarBack"
           },
           {
             "objectName": "expSprite"
@@ -4844,14 +4940,6 @@
                     "FruitSpawn",
                     "=",
                     "RandomInRange(1,3)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "UpgradePanel"
                   ]
                 }
               ]
