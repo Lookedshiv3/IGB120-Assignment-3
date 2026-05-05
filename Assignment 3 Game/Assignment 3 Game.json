@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "Menu_Screen",
   "gdVersion": {
     "build": 266,
     "major": 5,
@@ -1624,17 +1624,16 @@
           "initialVariables": []
         },
         {
-          "angle": 270,
-          "customSize": true,
-          "depth": 1,
-          "height": 709,
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "UpgradePanel",
-          "persistentUuid": "dc72d2b9-14fb-4e23-a727-ff10a82b85ee",
-          "width": 465,
-          "x": 415,
-          "y": -13,
+          "name": "levelText",
+          "persistentUuid": "1e2fd377-2427-4162-a8d7-1d94c4a6b531",
+          "width": 0,
+          "x": 1032,
+          "y": 653,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -1709,6 +1708,11 @@
               "name": "MaxExp",
               "type": "number",
               "value": 10
+            },
+            {
+              "name": "CurrentLevel",
+              "type": "number",
+              "value": 0
             },
             {
               "name": "LevelUp",
@@ -4579,6 +4583,50 @@
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "levelText",
+          "persistentUuid": "d0606ce7-9f29-4f68-bf85-2fd471b18199",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Lvl: ",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Lvl: ",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -4619,6 +4667,9 @@
           },
           {
             "objectName": "healthText"
+          },
+          {
+            "objectName": "levelText"
           },
           {
             "objectName": "levelTimeText"
@@ -6823,6 +6874,17 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -7059,6 +7121,17 @@
                     "NumberFruit",
                     "-",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "2"
                   ]
                 },
                 {
@@ -7352,6 +7425,17 @@
                   "parameters": [
                     "NumberFruit",
                     "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
                     "1"
                   ]
                 },
@@ -10250,144 +10334,6 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "watermelonSprite",
-                    "Destroyed",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "CurrentExp",
-                    "+",
-                    "3"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "expSprite",
-                    "Resizable",
-                    "=",
-                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "orangeSprite",
-                    "Destroyed",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "CurrentExp",
-                    "+",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "expSprite",
-                    "Resizable",
-                    "=",
-                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "strawberrySprite",
-                    "Destroyed",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "CurrentExp",
-                    "+",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "expSprite",
-                    "Resizable",
-                    "=",
-                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
                     "value": "NumberObjectVariable"
                   },
                   "parameters": [
@@ -10458,6 +10404,17 @@
                 },
                 {
                   "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "232"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
@@ -10480,11 +10437,67 @@
                 },
                 {
                   "type": {
-                    "value": "Show"
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentLevel",
+                    "=",
+                    "playerSprite.CurrentLevel + 1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "UpgradePanel",
+                    "415",
+                    "-13",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
                   },
                   "parameters": [
                     "UpgradePanel",
-                    ""
+                    "+",
+                    "270\n"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "UpgradePanel",
+                    "=",
+                    "20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "UpgradePanel",
+                    "Resizable",
+                    "=",
+                    "465"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "UpgradePanel",
+                    "Resizable",
+                    "=",
+                    "709"
                   ]
                 },
                 {
@@ -10522,6 +10535,16 @@
                     "201",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "UpgradeChoices",
+                    "=",
+                    "21"
+                  ]
                 }
               ]
             },
@@ -10540,7 +10563,30 @@
                   ]
                 }
               ],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "levelText",
+                    "Text",
+                    "=",
+                    "\"Level: \" + playerSprite.CurrentLevel"
+                  ]
+                }
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::ForEach",
@@ -10558,21 +10604,11 @@
                     },
                     {
                       "type": {
-                        "value": "Hide"
+                        "value": "Delete"
                       },
                       "parameters": [
-                        "UpgradePanel"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                      },
-                      "parameters": [
-                        "expSprite",
-                        "Resizable",
-                        "=",
-                        "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                        "UpgradePanel",
+                        ""
                       ]
                     }
                   ]
