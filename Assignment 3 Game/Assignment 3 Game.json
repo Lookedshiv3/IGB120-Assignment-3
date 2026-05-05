@@ -645,7 +645,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.3389693172845611,
+        "zoomFactor": 1.0615714305220167,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -676,6 +676,14 @@
             },
             {
               "name": "strawberrySprite"
+            }
+          ]
+        },
+        {
+          "name": "UpgradeChoices",
+          "objects": [
+            {
+              "name": "NewUpgradeCard"
             }
           ]
         }
@@ -959,6 +967,23 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 270,
+          "customSize": true,
+          "depth": 1,
+          "height": 709,
+          "keepRatio": true,
+          "layer": "",
+          "name": "UpgradePanel",
+          "persistentUuid": "dc72d2b9-14fb-4e23-a727-ff10a82b85ee",
+          "width": 465,
+          "x": 415,
+          "y": -13,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -1028,7 +1053,7 @@
             {
               "name": "MaxExp",
               "type": "number",
-              "value": 1
+              "value": 10
             },
             {
               "name": "LevelUp",
@@ -3893,6 +3918,23 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 0,
+          "height": 256,
+          "leftMargin": 0,
+          "name": "UpgradePanel",
+          "persistentUuid": "9b3c7ff5-2d7d-47d1-b78d-9096d7e5ea45",
+          "rightMargin": 0,
+          "texture": "Card",
+          "tiled": false,
+          "topMargin": 0,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 192,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
         }
       ],
       "objectsFolderStructure": {
@@ -3981,6 +4023,9 @@
           },
           {
             "objectName": "NewUpgradeCard"
+          },
+          {
+            "objectName": "UpgradePanel"
           }
         ]
       },
@@ -3990,7 +4035,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Setup",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4106,6 +4150,14 @@
                     "=",
                     "RandomInRange(1,3)"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "UpgradePanel"
+                  ]
                 }
               ]
             }
@@ -4117,6 +4169,164 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "name": "Pause",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Paused",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    ".000000001"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "TopDownMovement",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Paused",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ChangeTimeScale"
+                  },
+                  "parameters": [
+                    "",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Escape\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Paused",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Paused",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Paused",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Paused",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
           "name": "Movement Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -5899,7 +6109,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -5949,6 +6158,17 @@
                 },
                 {
                   "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "watermelonSprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -5976,17 +6196,6 @@
                     "Text",
                     "=",
                     "\"Score: \" + ToString(Score)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "watermelonSprite",
-                    "Destroyed",
-                    "True",
-                    ""
                   ]
                 },
                 {
@@ -6189,6 +6398,17 @@
                 },
                 {
                   "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "orangeSprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -6216,17 +6436,6 @@
                     "Text",
                     "=",
                     "\"Score: \" + ToString(Score)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "orangeSprite",
-                    "Destroyed",
-                    "True",
-                    ""
                   ]
                 },
                 {
@@ -6483,6 +6692,17 @@
                 },
                 {
                   "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "strawberrySprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -6522,17 +6742,6 @@
                     "5",
                     "+",
                     "10"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "strawberrySprite",
-                    "Destroyed",
-                    "True",
-                    ""
                   ]
                 },
                 {
@@ -6590,6 +6799,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7205,7 +7415,7 @@
           "colorR": 74,
           "creationTime": 0,
           "folded": true,
-          "name": "Level Timer",
+          "name": "Level Timersa",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
@@ -9366,69 +9576,194 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "watermelonSprite",
-              "conditions": [],
-              "actions": [],
-              "events": [
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanObjectVariable"
-                      },
-                      "parameters": [
-                        "watermelonSprite",
-                        "Destroyed",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberObjectVariable"
-                      },
-                      "parameters": [
-                        "playerSprite",
-                        "CurrentExp",
-                        "+",
-                        "1"
-                      ]
-                    }
-                  ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "NumberObjectVariable"
-                          },
-                          "parameters": [
-                            "playerSprite",
-                            "CurrentExp",
-                            ">=",
-                            "playerSprite.MaxExp"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetBooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "playerSprite",
-                            "LevelUp",
-                            "True",
-                            ""
-                          ]
-                        }
-                      ]
-                    }
+                  "type": {
+                    "value": "SceneJustBegins"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "watermelonSprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "orangeSprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "strawberrySprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "expSprite",
+                    "Resizable",
+                    "=",
+                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    ">=",
+                    "playerSprite.MaxExp"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "LevelUp",
+                    "True",
+                    ""
                   ]
                 }
               ]
@@ -9469,24 +9804,133 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "NewUpgradeCard",
-                    "playerSprite.CenterX()",
-                    "playerSprite.BoundingBoxCenterY()",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
                     "Paused",
                     "True",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "MaxExp",
+                    "+",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "UpgradePanel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "UpgradeChoices",
+                    "353",
+                    "201",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "UpgradeChoices",
+                    "555",
+                    "201",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "UpgradeChoices",
+                    "756",
+                    "201",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "LevelUp",
+                    "=",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "UpgradeChoices",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "UpgradeChoices",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Hide"
+                      },
+                      "parameters": [
+                        "UpgradePanel"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "expSprite",
+                        "Resizable",
+                        "=",
+                        "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -9502,151 +9946,13 @@
                     "NewUpgradeCard",
                     ""
                   ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "Paused",
-                    "False",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "NewUpgradeCard",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ],
-          "parameters": []
-        },
-        {
-          "colorB": 228,
-          "colorG": 176,
-          "colorR": 74,
-          "creationTime": 0,
-          "name": "Pause",
-          "source": "",
-          "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Paused",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ChangeTimeScale"
-                  },
-                  "parameters": [
-                    "",
-                    ".000000001"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "TopDownMovement",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Else",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "Paused",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ChangeTimeScale"
-                  },
-                  "parameters": [
-                    "",
-                    "1"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "KeyFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Escape\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
                 }
               ],
               "actions": [],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "Paused",
-                        "=",
-                        ""
-                      ]
-                    }
-                  ],
+                  "conditions": [],
                   "actions": [
                     {
                       "type": {
@@ -9654,33 +9960,17 @@
                       },
                       "parameters": [
                         "Paused",
-                        "True",
+                        "False",
                         ""
                       ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Else",
-                  "conditions": [
+                    },
                     {
                       "type": {
-                        "value": "BooleanVariable"
+                        "value": "SetBooleanObjectVariable"
                       },
                       "parameters": [
-                        "Paused",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "Paused",
+                        "playerSprite",
+                        "LevelUp",
                         "False",
                         ""
                       ]
