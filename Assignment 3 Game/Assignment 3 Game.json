@@ -30624,7 +30624,46 @@
       "tags": [],
       "authorIds": [],
       "dependencies": [],
-      "globalVariables": [],
+      "globalVariables": [
+        {
+          "name": "CurrentEXP",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MaxEXP",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Upgrades",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Shield"
+            },
+            {
+              "type": "string",
+              "value": "Freeze"
+            },
+            {
+              "type": "string",
+              "value": "Earth Blast"
+            }
+          ]
+        },
+        {
+          "name": "RandomUpgrade",
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "name": "RNG",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "sceneVariables": [],
       "eventsFunctions": [],
       "eventsFunctionsFolderStructure": {
@@ -30725,7 +30764,7 @@
               "string": "Text",
               "font": "MPLUS1p-Black.ttf",
               "textAlignment": "center",
-              "characterSize": 25,
+              "characterSize": 20,
               "color": {
                 "b": 255,
                 "g": 255,
@@ -30749,7 +30788,7 @@
                 "font": "MPLUS1p-Black.ttf",
                 "textAlignment": "center",
                 "verticalTextAlignment": "center",
-                "characterSize": 25,
+                "characterSize": 20,
                 "lineHeight": 0,
                 "color": "255;255;255"
               }
@@ -30769,7 +30808,7 @@
               "string": "Text",
               "font": "MPLUS1p-Black.ttf",
               "textAlignment": "center",
-              "characterSize": 18,
+              "characterSize": 15,
               "color": {
                 "b": 255,
                 "g": 255,
@@ -30793,7 +30832,7 @@
                 "font": "MPLUS1p-Black.ttf",
                 "textAlignment": "center",
                 "verticalTextAlignment": "top",
-                "characterSize": 18,
+                "characterSize": 15,
                 "lineHeight": 0,
                 "color": "255;255;255"
               }
@@ -30864,13 +30903,13 @@
               "angle": 0,
               "customSize": true,
               "depth": 2,
-              "height": 56,
+              "height": 40,
               "layer": "",
               "name": "UpgradeTitle",
               "persistentUuid": "86ae8fa3-fbc9-4425-955d-e658b97d1b75",
-              "width": 192,
-              "x": 0,
-              "y": 28,
+              "width": 112,
+              "x": 40,
+              "y": 36,
               "zOrder": 1,
               "numberProperties": [],
               "stringProperties": [],
@@ -30880,12 +30919,12 @@
               "angle": 0,
               "customSize": true,
               "depth": 2,
-              "height": 189,
+              "height": 131,
               "layer": "",
               "name": "UpgradeDescription",
               "persistentUuid": "f236b596-45a9-4617-a645-4dc0c1ecc2c8",
-              "width": 192,
-              "x": 0,
+              "width": 158,
+              "x": 17,
               "y": 67,
               "zOrder": 1,
               "numberProperties": [],
@@ -30938,7 +30977,7 @@
             "gridColor": 10401023,
             "gridAlpha": 0.8,
             "snap": false,
-            "zoomFactor": 3.4261869022483844,
+            "zoomFactor": 2.015404060146112,
             "windowMask": false,
             "selectedLayer": "",
             "gameEditorMode": "instances-editor"
@@ -30974,6 +31013,161 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnString"
+                      },
+                      "parameters": [
+                        "UpgradeTitle.Text::Value()"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "UpgradeCardPrefab::UpgradeCard",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "RandomUpgrade",
+                        "=",
+                        "Upgrades[RNG]"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "UpgradeTitle",
+                        "Text",
+                        "=",
+                        "RandomUpgrade"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "RNG",
+                        "=",
+                        "RandomInRange(0,2)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::Value"
+                      },
+                      "parameters": [
+                        "UpgradeTitle",
+                        "Text",
+                        "contains",
+                        "\"Shield\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "UpgradeDescription",
+                        "Text",
+                        "=",
+                        "\"A shield\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::Value"
+                      },
+                      "parameters": [
+                        "UpgradeTitle",
+                        "Text",
+                        "contains",
+                        "\"Freeze\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "UpgradeDescription",
+                        "Text",
+                        "=",
+                        "\"Cool\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::Value"
+                      },
+                      "parameters": [
+                        "UpgradeTitle",
+                        "Text",
+                        "contains",
+                        "\"Earth Blast\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "UpgradeDescription",
+                        "Text",
+                        "=",
+                        "\"The ground rumbles\""
+                      ]
+                    }
+                  ]
                 }
               ],
               "parameters": [
@@ -30991,6 +31185,9 @@
             "folderName": "__ROOT",
             "children": [
               {
+                "functionName": "onCreated"
+              },
+              {
                 "functionName": "IsClicked"
               }
             ]
@@ -30998,20 +31195,20 @@
           "propertyDescriptors": [
             {
               "value": "",
-              "type": "Number",
+              "type": "Choice",
               "label": "",
               "extraInformation": [
                 "json"
               ],
               "choices": [],
-              "name": "Unnamed"
+              "name": "Title"
             }
           ],
           "propertiesFolderStructure": {
             "folderName": "__ROOT",
             "children": [
               {
-                "propertyName": "Unnamed"
+                "propertyName": "Title"
               }
             ]
           },
