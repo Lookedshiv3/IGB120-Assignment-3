@@ -1764,7 +1764,7 @@
             {
               "name": "MaxExp",
               "type": "number",
-              "value": 10
+              "value": 1
             },
             {
               "name": "CurrentLevel",
@@ -9224,7 +9224,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Power Up Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -10686,17 +10685,6 @@
                     "=",
                     "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
                   ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "levelText",
-                    "Text",
-                    "=",
-                    "\"Level: \" + playerSprite.CurrentLevel"
-                  ]
                 }
               ],
               "events": [
@@ -10765,6 +10753,158 @@
                         "LevelUp",
                         "False",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "levelText",
+                        "Text",
+                        "=",
+                        "UpgradeChoices.Text::Value()"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::Value"
+                          },
+                          "parameters": [
+                            "UpgradeChoices",
+                            "Text",
+                            "contains",
+                            "\"Shield\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "ShieldPowerInAction",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "powerSprite",
+                            "Resizable",
+                            "=",
+                            "26"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "powerBarSprite",
+                            "Resizable",
+                            "=",
+                            "580"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                          },
+                          "parameters": [
+                            "powerSprite",
+                            "Resizable",
+                            "=",
+                            "166"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                          },
+                          "parameters": [
+                            "powerBarSprite",
+                            "Resizable",
+                            "=",
+                            "580"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "powerSprite",
+                            "296",
+                            "655",
+                            "\"UI\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "powerBarSprite",
+                            "89",
+                            "382",
+                            "\"UI\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"powerTimer\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "Animation",
+                            "=",
+                            "\"Shield Idle\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "PowerTypeUsing",
+                            "=",
+                            "2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "PowerObtained",
+                            "True",
+                            ""
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -31651,22 +31791,24 @@
                       "parameters": [
                         "True"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Text",
+                        "=",
+                        "UpgradeTitle.Text::Value()"
+                      ]
                     }
                   ]
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetReturnString"
-                      },
-                      "parameters": [
-                        "UpgradeTitle.Text::Value()"
-                      ]
-                    }
-                  ]
+                  "actions": []
                 }
               ],
               "parameters": [
@@ -31748,6 +31890,14 @@
                         "=",
                         "\"A shield\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetReturnString"
+                      },
+                      "parameters": [
+                        "\"Shield\""
+                      ]
                     }
                   ]
                 },
@@ -31777,6 +31927,14 @@
                         "=",
                         "\"Cool\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetReturnString"
+                      },
+                      "parameters": [
+                        "\"Freeze\""
+                      ]
                     }
                   ]
                 },
@@ -31805,6 +31963,14 @@
                         "Text",
                         "=",
                         "\"The ground rumbles\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetReturnString"
+                      },
+                      "parameters": [
+                        "\"Blast\""
                       ]
                     }
                   ]
