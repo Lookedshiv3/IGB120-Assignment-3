@@ -2574,6 +2574,11 @@
               "name": "Destroyed",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "Frozen",
+              "type": "boolean",
+              "value": false
             }
           ],
           "effects": [],
@@ -2737,6 +2742,11 @@
               "name": "Destroyed",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "Frozen",
+              "type": "boolean",
+              "value": false
             }
           ],
           "effects": [],
@@ -2898,6 +2908,11 @@
           "variables": [
             {
               "name": "Destroyed",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Frozen",
               "type": "boolean",
               "value": false
             }
@@ -4850,6 +4865,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Setup",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4976,6 +4992,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Pause",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6420,7 +6437,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Spawn",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6832,78 +6848,97 @@
                     "value": "BooleanObjectVariable"
                   },
                   "parameters": [
-                    "orangeSprite",
-                    "Destroyed",
+                    "Fruit",
+                    "Frozen",
                     "=",
                     ""
                   ]
                 }
               ],
-              "actions": [
+              "actions": [],
+              "events": [
                 {
-                  "type": {
-                    "value": "Rotate"
-                  },
-                  "parameters": [
-                    "orangeSprite",
-                    "90",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "orangeSprite",
+                        "Destroyed",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Rotate"
+                      },
+                      "parameters": [
+                        "orangeSprite",
+                        "90",
+                        ""
+                      ]
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
+                },
                 {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "watermelonSprite",
-                    "Destroyed",
-                    "=",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "watermelonSprite",
+                        "Destroyed",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Rotate"
+                      },
+                      "parameters": [
+                        "watermelonSprite",
+                        "90",
+                        ""
+                      ]
+                    }
                   ]
-                }
-              ],
-              "actions": [
+                },
                 {
-                  "type": {
-                    "value": "Rotate"
-                  },
-                  "parameters": [
-                    "watermelonSprite",
-                    "90",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "strawberrySprite",
-                    "Destroyed",
-                    "=",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Rotate"
-                  },
-                  "parameters": [
-                    "strawberrySprite",
-                    "90",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "strawberrySprite",
+                        "Destroyed",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Rotate"
+                      },
+                      "parameters": [
+                        "strawberrySprite",
+                        "90",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -10906,6 +10941,138 @@
                           ]
                         }
                       ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::Value"
+                          },
+                          "parameters": [
+                            "UpgradeChoices",
+                            "Text",
+                            "contains",
+                            "\"Freeze\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "Fruit",
+                            "Frozen",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PauseTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"fruitSpawnTimer\""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "Frozen",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ClearForces"
+                              },
+                              "parameters": [
+                                "Fruit"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Rotate"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "0\n",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Wait"
+                              },
+                              "parameters": [
+                                "3"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "Frozen",
+                                "False",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "AddForceAL"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "Random(360)",
+                                "50",
+                                "1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "UnPauseTimer"
+                              },
+                              "parameters": [
+                                "",
+                                "\"fruitSpawnTimer\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::Value"
+                          },
+                          "parameters": [
+                            "UpgradeChoices",
+                            "Text",
+                            "contains",
+                            "\"Earth Blast\""
+                          ]
+                        }
+                      ],
+                      "actions": []
                     }
                   ]
                 }
