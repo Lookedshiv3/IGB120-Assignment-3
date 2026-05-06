@@ -671,6 +671,14 @@
         "name": "assets/Level 2 Select.jpg",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -1348,7 +1356,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5526016617969814,
+        "zoomFactor": 0.4381176842889489,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1643,7 +1651,7 @@
           "customSize": true,
           "depth": 1,
           "height": 40,
-          "layer": "",
+          "layer": "UI",
           "name": "expSprite",
           "persistentUuid": "5024b3c6-2dff-4592-9cd7-95a48bf41750",
           "width": 232,
@@ -1659,7 +1667,7 @@
           "customSize": false,
           "height": 0,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "levelText",
           "persistentUuid": "1e2fd377-2427-4162-a8d7-1d94c4a6b531",
           "width": 0,
@@ -1676,7 +1684,7 @@
           "depth": 1,
           "height": 192,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "expBarSprite",
           "persistentUuid": "75ee0b7c-02a1-4e38-ba13-a07fc63c20e0",
           "width": 284,
@@ -1693,13 +1701,30 @@
           "depth": 1,
           "height": 40,
           "keepRatio": true,
-          "layer": "",
+          "layer": "UI",
           "name": "expBarBack",
           "persistentUuid": "89dde4e5-970f-467f-8022-697fda25bbf8",
           "width": 232,
           "x": 1006,
           "y": 648,
           "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 90,
+          "customSize": true,
+          "depth": 8,
+          "height": 2279,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "UpgradePanel",
+          "persistentUuid": "fdf08340-d7b7-4c90-a827-479c315b6939",
+          "width": 2170,
+          "x": -416,
+          "y": -1195,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4767,6 +4792,68 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "FrozenLayer",
+          "persistentUuid": "685b0de3-87b4-49ba-8a70-bda911d80615",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "NewSprite",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "NewSprite",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 0
+                          },
+                          {
+                            "x": 64,
+                            "y": 64
+                          },
+                          {
+                            "x": 0,
+                            "y": 64
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4864,6 +4951,9 @@
           },
           {
             "objectName": "UpgradePanel"
+          },
+          {
+            "objectName": "FrozenLayer"
           }
         ]
       },
@@ -4873,7 +4963,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Setup",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4891,6 +4980,14 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "UpgradePanel"
+                  ]
+                },
                 {
                   "type": {
                     "value": "PlayMusicOnChannel"
@@ -5037,12 +5134,21 @@
                 },
                 {
                   "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "UpgradePanel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "TopDownMovementBehavior::IgnoreDefaultControls"
                   },
                   "parameters": [
                     "playerSprite",
                     "TopDownMovement",
-                    ""
+                    "yes"
                   ]
                 }
               ]
@@ -5069,6 +5175,14 @@
                   "parameters": [
                     "",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "UpgradePanel"
                   ]
                 }
               ]
@@ -6445,6 +6559,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Fruit Spawn",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6959,6 +7074,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -8814,6 +8930,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -9267,6 +9384,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Power Up Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -9521,6 +9639,7 @@
                   ]
                 },
                 {
+                  "disabled": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -10602,18 +10721,6 @@
                 },
                 {
                   "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "UpgradePanel",
-                    "415",
-                    "-13",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetAngle"
                   },
                   "parameters": [
@@ -10840,6 +10947,15 @@
                         },
                         {
                           "type": {
+                            "value": "ResetTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"powerTimer\""
+                          ]
+                        },
+                        {
+                          "type": {
                             "value": "ResizableCapability::ResizableBehavior::SetHeight"
                           },
                           "parameters": [
@@ -10873,17 +10989,6 @@
                         },
                         {
                           "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                          },
-                          "parameters": [
-                            "powerBarSprite",
-                            "Resizable",
-                            "=",
-                            "580"
-                          ]
-                        },
-                        {
-                          "type": {
                             "value": "Create"
                           },
                           "parameters": [
@@ -10908,11 +11013,13 @@
                         },
                         {
                           "type": {
-                            "value": "ResetTimer"
+                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
                           },
                           "parameters": [
-                            "",
-                            "\"powerTimer\""
+                            "powerBarSprite",
+                            "Resizable",
+                            "=",
+                            "580"
                           ]
                         },
                         {
@@ -10985,6 +11092,60 @@
                             "",
                             "\"fruitSpawnTimer\""
                           ]
+                        },
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "FrozenLayer",
+                            "0",
+                            "0",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "OpacityCapability::OpacityBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "FrozenLayer",
+                            "Opacity",
+                            "=",
+                            "128"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetSize"
+                          },
+                          "parameters": [
+                            "FrozenLayer",
+                            "Resizable",
+                            "SceneWindowWidth()",
+                            "SceneWindowHeight()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetZOrder"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "=",
+                            "5"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetZOrder"
+                          },
+                          "parameters": [
+                            "FrozenLayer",
+                            "=",
+                            "4"
+                          ]
                         }
                       ],
                       "events": [
@@ -11032,6 +11193,15 @@
                             },
                             {
                               "type": {
+                                "value": "UnPauseTimer"
+                              },
+                              "parameters": [
+                                "",
+                                "\"fruitSpawnTimer\""
+                              ]
+                            },
+                            {
+                              "type": {
                                 "value": "SetBooleanObjectVariable"
                               },
                               "parameters": [
@@ -11054,11 +11224,21 @@
                             },
                             {
                               "type": {
-                                "value": "UnPauseTimer"
+                                "value": "Rotate"
                               },
                               "parameters": [
-                                "",
-                                "\"fruitSpawnTimer\""
+                                "Fruit",
+                                "90",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "FrozenLayer",
+                                ""
                               ]
                             }
                           ]
@@ -11080,7 +11260,49 @@
                           ]
                         }
                       ],
-                      "actions": []
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::ForEach",
+                          "object": "Fruit",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "ClearForces"
+                              },
+                              "parameters": [
+                                "Fruit"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "AddForceAL"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
+                                "250",
+                                "1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "Tween",
+                                "\"Fade\"",
+                                "0",
+                                "\"linear\"",
+                                "0.5",
+                                "yes"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
