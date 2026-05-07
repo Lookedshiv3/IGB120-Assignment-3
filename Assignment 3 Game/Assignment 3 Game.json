@@ -679,6 +679,14 @@
         "name": "NewSprite",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Pan Slam Effect Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Pan Slam Effect Sprite.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -4854,6 +4862,72 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "GroundBreak",
+          "persistentUuid": "2c49e91a-1370-4da7-9824-ecfcdd2d5767",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Pan Slam Effect Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 1,
+                            "y": 0
+                          },
+                          {
+                            "x": 769,
+                            "y": 0
+                          },
+                          {
+                            "x": 769,
+                            "y": 944
+                          },
+                          {
+                            "x": 1,
+                            "y": 944
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4954,6 +5028,9 @@
           },
           {
             "objectName": "FrozenLayer"
+          },
+          {
+            "objectName": "GroundBreak"
           }
         ]
       },
@@ -7074,7 +7151,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11260,7 +11336,57 @@
                           ]
                         }
                       ],
-                      "actions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Create"
+                          },
+                          "parameters": [
+                            "",
+                            "GroundBreak",
+                            "0",
+                            "0",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ScalableCapability::ScalableBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "GroundBreak",
+                            "Scale",
+                            "=",
+                            ".25"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetCenter"
+                          },
+                          "parameters": [
+                            "GroundBreak",
+                            "=",
+                            "playerSprite.CenterX()",
+                            "=",
+                            "playerSprite.CenterY()"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                          },
+                          "parameters": [
+                            "GroundBreak",
+                            "Tween",
+                            "\"Fade\"",
+                            "0",
+                            "\"linear\"",
+                            "0.5",
+                            "yes"
+                          ]
+                        }
+                      ],
                       "events": [
                         {
                           "type": "BuiltinCommonInstructions::ForEach",
@@ -11273,6 +11399,27 @@
                               },
                               "parameters": [
                                 "Fruit"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "Fruit",
+                                "Destroyed",
+                                "True",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "NumberFruit",
+                                "-",
+                                "1"
                               ]
                             },
                             {
