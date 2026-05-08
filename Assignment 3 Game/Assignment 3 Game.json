@@ -1364,7 +1364,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4381176842889489,
+        "zoomFactor": 0.8227139809506226,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1716,23 +1716,6 @@
           "x": 1006,
           "y": 648,
           "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 90,
-          "customSize": true,
-          "depth": 8,
-          "height": 2279,
-          "keepRatio": true,
-          "layer": "UI",
-          "name": "UpgradePanel",
-          "persistentUuid": "fdf08340-d7b7-4c90-a827-479c315b6939",
-          "width": 2170,
-          "x": -416,
-          "y": -1195,
-          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -5059,14 +5042,6 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "UpgradePanel"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "PlayMusicOnChannel"
                   },
                   "parameters": [
@@ -5166,12 +5141,64 @@
                 },
                 {
                   "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "FrozenLayer",
+                    "0",
+                    "0",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "FrozenLayer"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "FrozenLayer",
+                    "=",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetZOrder"
                   },
                   "parameters": [
                     "playerSprite",
                     "=",
                     "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetSize"
+                  },
+                  "parameters": [
+                    "FrozenLayer",
+                    "Resizable",
+                    "SceneWindowWidth()",
+                    "SceneWindowHeight()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "FrozenLayer",
+                    "Opacity",
+                    "=",
+                    "128"
                   ]
                 }
               ]
@@ -5184,7 +5211,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Pause",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -5221,15 +5247,6 @@
                 },
                 {
                   "type": {
-                    "value": "Show"
-                  },
-                  "parameters": [
-                    "UpgradePanel",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TopDownMovementBehavior::IgnoreDefaultControls"
                   },
                   "parameters": [
@@ -5262,14 +5279,6 @@
                   "parameters": [
                     "",
                     "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Hide"
-                  },
-                  "parameters": [
-                    "UpgradePanel"
                   ]
                 }
               ]
@@ -5319,6 +5328,24 @@
                         "True",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "Show"
+                      },
+                      "parameters": [
+                        "FrozenLayer",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangeColor"
+                      },
+                      "parameters": [
+                        "FrozenLayer",
+                        "\"#000000\""
+                      ]
                     }
                   ]
                 },
@@ -5345,6 +5372,14 @@
                         "Paused",
                         "False",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Hide"
+                      },
+                      "parameters": [
+                        "FrozenLayer"
                       ]
                     }
                   ]
@@ -10937,38 +10972,33 @@
                         "UpgradeChoices",
                         ""
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "UpgradePanel",
-                        ""
-                      ]
                     }
                   ]
                 }
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "UpgradeCardPrefab::UpgradeCard::IsClicked"
-                  },
-                  "parameters": [
-                    "NewUpgradeCard",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [],
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Abilities",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "UpgradeCardPrefab::UpgradeCard::IsClicked"
+                      },
+                      "parameters": [
+                        "NewUpgradeCard",
+                        ""
+                      ]
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
@@ -10979,46 +11009,12 @@
                         "False",
                         ""
                       ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanObjectVariable"
-                      },
-                      "parameters": [
-                        "playerSprite",
-                        "LevelUp",
-                        "False",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                      },
-                      "parameters": [
-                        "levelText",
-                        "Text",
-                        "=",
-                        "UpgradeChoices.Text::Value()"
-                      ]
                     }
                   ],
                   "events": [
                     {
                       "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "TextContainerCapability::TextContainerBehavior::Value"
-                          },
-                          "parameters": [
-                            "UpgradeChoices",
-                            "Text",
-                            "contains",
-                            "\"Shield\""
-                          ]
-                        }
-                      ],
+                      "conditions": [],
                       "actions": [
                         {
                           "type": {
@@ -11026,201 +11022,20 @@
                           },
                           "parameters": [
                             "playerSprite",
-                            "ShieldPowerInAction",
-                            "True",
+                            "LevelUp",
+                            "False",
                             ""
                           ]
                         },
                         {
                           "type": {
-                            "value": "ResetTimer"
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                           },
                           "parameters": [
-                            "",
-                            "\"powerTimer\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                          },
-                          "parameters": [
-                            "powerSprite",
-                            "Resizable",
-                            "=",
-                            "26"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                          },
-                          "parameters": [
-                            "powerBarSprite",
-                            "Resizable",
-                            "=",
-                            "580"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                          },
-                          "parameters": [
-                            "powerSprite",
-                            "Resizable",
-                            "=",
-                            "166"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "powerSprite",
-                            "296",
-                            "655",
-                            "\"UI\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "powerBarSprite",
-                            "89",
-                            "382",
-                            "\"UI\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                          },
-                          "parameters": [
-                            "powerBarSprite",
-                            "Resizable",
-                            "=",
-                            "580"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                          },
-                          "parameters": [
-                            "playerSprite",
-                            "Animation",
-                            "=",
-                            "\"Shield Idle\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetNumberObjectVariable"
-                          },
-                          "parameters": [
-                            "playerSprite",
-                            "PowerTypeUsing",
-                            "=",
-                            "2"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetBooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "playerSprite",
-                            "PowerObtained",
-                            "True",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "TextContainerCapability::TextContainerBehavior::Value"
-                          },
-                          "parameters": [
-                            "UpgradeChoices",
+                            "levelText",
                             "Text",
-                            "contains",
-                            "\"Freeze\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetBooleanObjectVariable"
-                          },
-                          "parameters": [
-                            "Fruit",
-                            "Frozen",
-                            "True",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PauseTimer"
-                          },
-                          "parameters": [
-                            "",
-                            "\"fruitSpawnTimer\""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "FrozenLayer",
-                            "0",
-                            "0",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "OpacityCapability::OpacityBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "FrozenLayer",
-                            "Opacity",
                             "=",
-                            "128"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ResizableCapability::ResizableBehavior::SetSize"
-                          },
-                          "parameters": [
-                            "FrozenLayer",
-                            "Resizable",
-                            "SceneWindowWidth()",
-                            "SceneWindowHeight()"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetZOrder"
-                          },
-                          "parameters": [
-                            "FrozenLayer",
-                            "=",
-                            "4"
+                            "UpgradeChoices.Text::Value()"
                           ]
                         }
                       ],
@@ -11230,52 +11045,156 @@
                           "conditions": [
                             {
                               "type": {
-                                "value": "BooleanObjectVariable"
+                                "value": "TextContainerCapability::TextContainerBehavior::Value"
                               },
                               "parameters": [
-                                "Fruit",
-                                "Frozen",
-                                "True",
-                                ""
+                                "UpgradeChoices",
+                                "Text",
+                                "contains",
+                                "\"Shield\""
                               ]
                             }
                           ],
                           "actions": [
                             {
                               "type": {
-                                "value": "ClearForces"
+                                "value": "SetBooleanObjectVariable"
                               },
                               "parameters": [
-                                "Fruit"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Rotate"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "0\n",
+                                "playerSprite",
+                                "ShieldPowerInAction",
+                                "True",
                                 ""
                               ]
                             },
                             {
                               "type": {
-                                "value": "Wait"
+                                "value": "ResetTimer"
                               },
                               "parameters": [
-                                "3"
+                                "",
+                                "\"powerTimer\""
                               ]
                             },
                             {
                               "type": {
-                                "value": "UnPauseTimer"
+                                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                              },
+                              "parameters": [
+                                "powerSprite",
+                                "Resizable",
+                                "=",
+                                "26"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                              },
+                              "parameters": [
+                                "powerBarSprite",
+                                "Resizable",
+                                "=",
+                                "580"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                              },
+                              "parameters": [
+                                "powerSprite",
+                                "Resizable",
+                                "=",
+                                "166"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
                               },
                               "parameters": [
                                 "",
-                                "\"fruitSpawnTimer\""
+                                "powerSprite",
+                                "296",
+                                "655",
+                                "\"UI\""
                               ]
                             },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "powerBarSprite",
+                                "89",
+                                "382",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                              },
+                              "parameters": [
+                                "powerBarSprite",
+                                "Resizable",
+                                "=",
+                                "580"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                              },
+                              "parameters": [
+                                "playerSprite",
+                                "Animation",
+                                "=",
+                                "\"Shield Idle\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberObjectVariable"
+                              },
+                              "parameters": [
+                                "playerSprite",
+                                "PowerTypeUsing",
+                                "=",
+                                "2"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanObjectVariable"
+                              },
+                              "parameters": [
+                                "playerSprite",
+                                "PowerObtained",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::Value"
+                              },
+                              "parameters": [
+                                "UpgradeChoices",
+                                "Text",
+                                "contains",
+                                "\"Freeze\""
+                              ]
+                            }
+                          ],
+                          "actions": [
                             {
                               "type": {
                                 "value": "SetBooleanObjectVariable"
@@ -11283,186 +11202,10 @@
                               "parameters": [
                                 "Fruit",
                                 "Frozen",
-                                "False",
-                                ""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "AddForceAL"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "Random(360)",
-                                "50",
-                                "1"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Rotate"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "90",
-                                ""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Delete"
-                              },
-                              "parameters": [
-                                "FrozenLayer",
-                                ""
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "TextContainerCapability::TextContainerBehavior::Value"
-                          },
-                          "parameters": [
-                            "UpgradeChoices",
-                            "Text",
-                            "contains",
-                            "\"Earth Blast\""
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "Create"
-                          },
-                          "parameters": [
-                            "",
-                            "GroundBreak",
-                            "0",
-                            "0",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "ScalableCapability::ScalableBehavior::SetValue"
-                          },
-                          "parameters": [
-                            "GroundBreak",
-                            "Scale",
-                            "=",
-                            ".25"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetCenter"
-                          },
-                          "parameters": [
-                            "GroundBreak",
-                            "=",
-                            "playerSprite.CenterX()",
-                            "=",
-                            "playerSprite.CenterY()"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                          },
-                          "parameters": [
-                            "GroundBreak",
-                            "Tween",
-                            "\"Fade\"",
-                            "0",
-                            "\"linear\"",
-                            "0.5",
-                            "yes"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetZOrder"
-                          },
-                          "parameters": [
-                            "GroundBreak",
-                            "=",
-                            "2"
-                          ]
-                        }
-                      ],
-                      "events": [
-                        {
-                          "type": "BuiltinCommonInstructions::ForEach",
-                          "object": "Fruit",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "value": "ClearForces"
-                              },
-                              "parameters": [
-                                "Fruit"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "SetBooleanObjectVariable"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "Destroyed",
                                 "True",
                                 ""
                               ]
                             },
-                            {
-                              "type": {
-                                "value": "SetNumberVariable"
-                              },
-                              "parameters": [
-                                "NumberFruit",
-                                "-",
-                                "1"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "AddForceAL"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
-                                "250",
-                                "1"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                              },
-                              "parameters": [
-                                "Fruit",
-                                "Tween",
-                                "\"Fade\"",
-                                "0",
-                                "\"linear\"",
-                                "0.5",
-                                "yes"
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
                             {
                               "type": {
                                 "value": "PauseTimer"
@@ -11471,22 +11214,308 @@
                                 "",
                                 "\"fruitSpawnTimer\""
                               ]
-                            },
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "BooleanObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "Frozen",
+                                    "True",
+                                    ""
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Show"
+                                  },
+                                  "parameters": [
+                                    "FrozenLayer",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ChangeColor"
+                                  },
+                                  "parameters": [
+                                    "FrozenLayer",
+                                    "\"#0200a9\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetZOrder"
+                                  },
+                                  "parameters": [
+                                    "FrozenLayer",
+                                    "=",
+                                    "4"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ClearForces"
+                                  },
+                                  "parameters": [
+                                    "Fruit"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Rotate"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "0\n",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Wait"
+                                  },
+                                  "parameters": [
+                                    "3"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "UnPauseTimer"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "\"fruitSpawnTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetBooleanObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "Frozen",
+                                    "False",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "AddForceAL"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "Random(360)",
+                                    "50",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Rotate"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "90",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Hide"
+                                  },
+                                  "parameters": [
+                                    "FrozenLayer"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
                             {
                               "type": {
-                                "value": "UnPauseTimer"
+                                "value": "TextContainerCapability::TextContainerBehavior::Value"
                               },
                               "parameters": [
-                                "",
-                                "\"fruitSpawnTimer\""
+                                "UpgradeChoices",
+                                "Text",
+                                "contains",
+                                "\"Earth Blast\""
                               ]
-                            },
+                            }
+                          ],
+                          "actions": [
                             {
                               "type": {
                                 "value": "Wait"
                               },
                               "parameters": [
-                                ".5"
+                                ".25"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "GroundBreak",
+                                "0",
+                                "0",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ScalableCapability::ScalableBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "GroundBreak",
+                                "Scale",
+                                "=",
+                                ".25"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetCenter"
+                              },
+                              "parameters": [
+                                "GroundBreak",
+                                "=",
+                                "playerSprite.CenterX()",
+                                "=",
+                                "playerSprite.CenterY()"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                              },
+                              "parameters": [
+                                "GroundBreak",
+                                "Tween",
+                                "\"Fade\"",
+                                "0",
+                                "\"linear\"",
+                                "1",
+                                "yes"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetZOrder"
+                              },
+                              "parameters": [
+                                "GroundBreak",
+                                "=",
+                                "2"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::ForEach",
+                              "object": "Fruit",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "ClearForces"
+                                  },
+                                  "parameters": [
+                                    "Fruit"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetBooleanObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "Destroyed",
+                                    "True",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "NumberFruit",
+                                    "-",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "AddForceAL"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
+                                    "250",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                  },
+                                  "parameters": [
+                                    "Fruit",
+                                    "Tween",
+                                    "\"Fade\"",
+                                    "0",
+                                    "\"linear\"",
+                                    "0.5",
+                                    "yes"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "PauseTimer"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "\"fruitSpawnTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "UnPauseTimer"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "\"fruitSpawnTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Wait"
+                                  },
+                                  "parameters": [
+                                    ".5"
+                                  ]
+                                }
                               ]
                             }
                           ]
@@ -11495,7 +11524,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "parameters": []
             }
           ],
           "parameters": []
