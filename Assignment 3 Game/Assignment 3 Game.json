@@ -687,6 +687,78 @@
         "name": "assets/Pan Slam Effect Sprite.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Player Game Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Player Game Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Player Shot Game Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Player Shot Game Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Experience Bar Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Experience Bar Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Experience Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Experience Bar.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Blueberry Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Blueberry Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Blueberry Explosion Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Blueberry Explosion Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Heat Shield Ability Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Heat Shield Ability Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Dry Ice Ability Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Dry Ice Ability Sprite.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Pan Slam Ability Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Pan Slam Ability Sprite.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -700,6 +772,34 @@
       "name": "Score",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "MaxFruitJuice",
+      "type": "number",
+      "value": 30
+    },
+    {
+      "name": "CurrentFruitJuice",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "PlayerInventory",
+      "type": "array",
+      "children": [
+        {
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "type": "string",
+          "value": "0"
+        }
+      ]
     }
   ],
   "layouts": [
@@ -1364,7 +1464,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8227139809506226,
+        "zoomFactor": 2.1524721829116102,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -1395,6 +1495,9 @@
             },
             {
               "name": "strawberrySprite"
+            },
+            {
+              "name": "blueberrySprite"
             }
           ]
         },
@@ -1429,11 +1532,6 @@
           "value": 90
         },
         {
-          "name": "NumberFruit",
-          "type": "number",
-          "value": 0
-        },
-        {
           "name": "SpawnPower",
           "type": "number",
           "value": 0
@@ -1452,6 +1550,26 @@
           "name": "Paused",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "NumberFruitSpawned",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TotalFruit",
+          "type": "number",
+          "value": 6
+        },
+        {
+          "name": "FruitInScene",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "FruitLeft",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -1628,22 +1746,6 @@
           "height": 0,
           "keepRatio": true,
           "layer": "UI",
-          "name": "scoreText",
-          "persistentUuid": "f50cafb7-a93a-4830-8921-1a6ac74d5df1",
-          "width": 0,
-          "x": 970,
-          "y": 19,
-          "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "UI",
           "name": "reloadOptionText",
           "persistentUuid": "eaa228ae-43a0-4568-9016-9302bc8909cf",
           "width": 0,
@@ -1658,13 +1760,13 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 40,
+          "height": 48,
           "layer": "UI",
           "name": "expSprite",
           "persistentUuid": "5024b3c6-2dff-4592-9cd7-95a48bf41750",
-          "width": 232,
-          "x": 1006,
-          "y": 648,
+          "width": 230,
+          "x": 1019,
+          "y": 642,
           "zOrder": 12,
           "numberProperties": [],
           "stringProperties": [],
@@ -1679,8 +1781,8 @@
           "name": "levelText",
           "persistentUuid": "1e2fd377-2427-4162-a8d7-1d94c4a6b531",
           "width": 0,
-          "x": 1024,
-          "y": 647,
+          "x": 1023,
+          "y": 645,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -1690,15 +1792,31 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 192,
+          "height": 556,
           "keepRatio": true,
-          "layer": "UI",
+          "layer": "",
           "name": "expBarSprite",
-          "persistentUuid": "75ee0b7c-02a1-4e38-ba13-a07fc63c20e0",
-          "width": 284,
-          "x": 980,
-          "y": 512,
-          "zOrder": 13,
+          "persistentUuid": "e382eb6e-b43d-4d7d-a0bd-2143f8c0cb2e",
+          "width": 556,
+          "x": 860,
+          "y": 364,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "enemiesLeftText",
+          "persistentUuid": "29292665-5904-4338-b6db-7d8a48ae0732",
+          "width": 0,
+          "x": 20,
+          "y": 12,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1707,18 +1825,123 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 40,
+          "height": 611,
           "keepRatio": true,
           "layer": "UI",
-          "name": "expBarBack",
-          "persistentUuid": "89dde4e5-970f-467f-8022-697fda25bbf8",
-          "width": 232,
-          "x": 1006,
-          "y": 648,
-          "zOrder": 11,
+          "name": "juiceBarSprite",
+          "persistentUuid": "c62c6005-f2eb-4268-a4e0-4d01385d1a77",
+          "width": 611,
+          "x": 600,
+          "y": 375,
+          "zOrder": 16,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 26,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "juiceBar",
+          "persistentUuid": "084eb7a7-9823-4b22-afae-a45b9c163229",
+          "width": 175,
+          "x": 818,
+          "y": 663,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "powerText",
+          "persistentUuid": "1ff1c4ec-5519-4698-8e15-738d504e7925",
+          "width": 0,
+          "x": 822,
+          "y": 663,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilitySprite",
+          "opacity": 0,
+          "persistentUuid": "c23ccf7a-4a78-4972-84da-516339b69187",
+          "width": 55,
+          "x": 1027,
+          "y": 587,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilitySprite",
+          "opacity": 0,
+          "persistentUuid": "e3660116-b5ac-4dbf-9a28-598713fc29fa",
+          "width": 55,
+          "x": 1106.5,
+          "y": 587,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilitySprite",
+          "opacity": 0,
+          "persistentUuid": "c77d16e3-a508-4992-b408-a02ed924c1e0",
+          "width": 55,
+          "x": 1186,
+          "y": 587,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 3
+            }
+          ]
         }
       ],
       "objects": [
@@ -1733,12 +1956,12 @@
             {
               "name": "MaxHealth",
               "type": "number",
-              "value": 25
+              "value": 60
             },
             {
               "name": "CurrentHealth",
               "type": "number",
-              "value": 25
+              "value": 60
             },
             {
               "name": "AmmoCount",
@@ -1831,7 +2054,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Player New Sprite.png",
+                      "image": "assets/Player Game Sprite.png",
                       "points": [
                         {
                           "name": "Gun",
@@ -1909,7 +2132,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Player Shot Sprite.png",
+                      "image": "assets/Player Shot Game Sprite.png",
                       "points": [
                         {
                           "name": "Gun",
@@ -1975,7 +2198,7 @@
                     },
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "Player New Sprite.png",
+                      "image": "assets/Player Game Sprite.png",
                       "points": [
                         {
                           "name": "Gun",
@@ -2603,6 +2826,11 @@
               "name": "Frozen",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "SpawnedFruit",
+              "type": "boolean",
+              "value": false
             }
           ],
           "effects": [],
@@ -2771,6 +2999,11 @@
               "name": "Frozen",
               "type": "boolean",
               "value": false
+            },
+            {
+              "name": "SpawnedFruit",
+              "type": "boolean",
+              "value": false
             }
           ],
           "effects": [],
@@ -2937,6 +3170,11 @@
             },
             {
               "name": "Frozen",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "SpawnedFruit",
               "type": "boolean",
               "value": false
             }
@@ -3301,7 +3539,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "25",
+          "string": "60",
           "font": "MPLUS1p-Black.ttf",
           "textAlignment": "left",
           "characterSize": 30,
@@ -3324,7 +3562,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "25",
+            "text": "60",
             "font": "MPLUS1p-Black.ttf",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -4253,7 +4491,7 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "powerBarSprite",
+          "name": "juiceBarSprite",
           "persistentUuid": "6f8d3987-c4e6-4d8b-bdf8-faeea778049c",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -4326,7 +4564,7 @@
         {
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
-          "name": "powerSprite",
+          "name": "juiceBar",
           "persistentUuid": "3aa62626-7a5f-4301-b0f6-bf323438a2ae",
           "type": "Sprite",
           "updateIfNotVisible": false,
@@ -4549,7 +4787,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets/ResourceBar.png",
+                      "image": "assets/Experience Bar Sprite.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -4565,20 +4803,20 @@
                       "customCollisionMask": [
                         [
                           {
-                            "x": 0,
-                            "y": 111
+                            "x": 304,
+                            "y": 432
                           },
                           {
-                            "x": 256,
-                            "y": 111
+                            "x": 800,
+                            "y": 432
                           },
                           {
-                            "x": 256,
-                            "y": 192
+                            "x": 800,
+                            "y": 672
                           },
                           {
-                            "x": 0,
-                            "y": 192
+                            "x": 304,
+                            "y": 672
                           }
                         ]
                       ]
@@ -4911,6 +5149,514 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "blueberrySprite",
+          "persistentUuid": "cef57e1f-9cbe-4a2e-ac6b-c35df50320c6",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Destroyed",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "Frozen",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "SpawnedFruit",
+              "type": "boolean",
+              "value": false
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "ScreenWrap",
+              "type": "ScreenWrap::ScreenWrap",
+              "HorizontalWrapping": true,
+              "VerticalWrapping": true,
+              "BorderTop": 0,
+              "BorderLeft": 0,
+              "BorderRight": 0,
+              "BorderBottom": 0,
+              "TriggerOffset": 0
+            },
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Blueberry Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 63.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 16.5
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 63,
+                            "y": 0
+                          },
+                          {
+                            "x": 80,
+                            "y": 16.5
+                          },
+                          {
+                            "x": 80,
+                            "y": 63.5
+                          },
+                          {
+                            "x": 63.5,
+                            "y": 80
+                          },
+                          {
+                            "x": 16.5,
+                            "y": 80
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Explosion",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Blueberry Explosion Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 63.5
+                          },
+                          {
+                            "x": 0,
+                            "y": 16.5
+                          },
+                          {
+                            "x": 16,
+                            "y": 0
+                          },
+                          {
+                            "x": 63,
+                            "y": 0
+                          },
+                          {
+                            "x": 80,
+                            "y": 16.5
+                          },
+                          {
+                            "x": 80,
+                            "y": 63.5
+                          },
+                          {
+                            "x": 63.5,
+                            "y": 80
+                          },
+                          {
+                            "x": 16.5,
+                            "y": 80
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "enemiesLeftText",
+          "persistentUuid": "45da71c3-301b-46e1-9d42-0070b67f5f57",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 1,
+              "leftEdgeAnchor": 2,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 2,
+              "topEdgeAnchor": 1,
+              "useLegacyBottomAndRightAnchors": false
+            }
+          ],
+          "string": "Enemies Left: 6",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;181;33",
+            "outlineThickness": 5,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Enemies Left: 6",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 40,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "powerText",
+          "persistentUuid": "44076072-1ed6-4fea-a2bf-be547f3a4086",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "0",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "durationBarSprite",
+          "persistentUuid": "e214effd-cd13-48f2-b530-eee035af64c9",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 2,
+              "leftEdgeAnchor": 1,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 1,
+              "topEdgeAnchor": 2,
+              "useLegacyBottomAndRightAnchors": false
+            }
+          ],
+          "animations": [
+            {
+              "name": "Power Bar",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Power Bar.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 0
+                          },
+                          {
+                            "x": 320,
+                            "y": 48
+                          },
+                          {
+                            "x": 0,
+                            "y": 48
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "abilitySprite",
+          "persistentUuid": "da4b77c5-88c9-44ce-929d-544ab5812845",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Heat Shield",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Heat Shield Ability Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 176
+                          },
+                          {
+                            "x": 0,
+                            "y": 176
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dry Freeze",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Dry Ice Ability Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 176
+                          },
+                          {
+                            "x": 0,
+                            "y": 176
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Pan Slam",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Pan Slam Ability Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 0
+                          },
+                          {
+                            "x": 208,
+                            "y": 176
+                          },
+                          {
+                            "x": 0,
+                            "y": 176
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -4935,6 +5681,9 @@
             "objectName": "strawberrySprite"
           },
           {
+            "objectName": "blueberrySprite"
+          },
+          {
             "objectName": "healthBarSprite"
           },
           {
@@ -4956,6 +5705,9 @@
             "objectName": "healthText"
           },
           {
+            "objectName": "powerText"
+          },
+          {
             "objectName": "levelText"
           },
           {
@@ -4965,10 +5717,16 @@
             "objectName": "powerSpawnedText"
           },
           {
-            "objectName": "powerBarSprite"
+            "objectName": "juiceBarSprite"
           },
           {
-            "objectName": "powerSprite"
+            "objectName": "juiceBar"
+          },
+          {
+            "objectName": "durationBarSprite"
+          },
+          {
+            "objectName": "abilitySprite"
           },
           {
             "objectName": "levelTimeAddText"
@@ -4978,6 +5736,9 @@
           },
           {
             "objectName": "scoreText"
+          },
+          {
+            "objectName": "enemiesLeftText"
           },
           {
             "objectName": "reloadText"
@@ -5105,6 +5866,17 @@
                 },
                 {
                   "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "juiceBar",
+                    "Resizable",
+                    "=",
+                    "(CurrentFruitJuice / MaxFruitJuice) * 175"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "Wait"
                   },
                   "parameters": [
@@ -5136,7 +5908,17 @@
                   "parameters": [
                     "FruitSpawn",
                     "=",
-                    "RandomInRange(1,3)"
+                    "RandomInRange(4, 4)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "NumberFruitSpawned",
+                    "+",
+                    "1"
                   ]
                 },
                 {
@@ -5211,6 +5993,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Pause",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6697,7 +7480,7 @@
                     "",
                     "\"fruitSpawnTimer\"",
                     ">=",
-                    "0.5"
+                    "1"
                   ]
                 },
                 {
@@ -6705,7 +7488,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "<",
                     "20"
                   ]
@@ -6720,31 +7503,98 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "FruitSpawn",
-                    "=",
-                    "RandomInRange(1,3)"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "ResetTimer"
                   },
                   "parameters": [
                     "",
                     "\"fruitSpawnTimer\""
                   ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "NumberFruitSpawned",
+                        "<",
+                        "5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitSpawn",
+                        "=",
+                        "RandomInRange(4, 4)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "NumberFruitSpawned",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
                 },
                 {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "NumberFruit",
-                    "+",
-                    "1"
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "NumberFruitSpawned",
+                        "=",
+                        "5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneInstancesCount"
+                      },
+                      "parameters": [
+                        "",
+                        "blueberrySprite",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitSpawn",
+                        "=",
+                        "RandomInRange(1, 1)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "NumberFruitSpawned",
+                        "+",
+                        "1"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -6793,8 +7643,8 @@
                       "parameters": [
                         "",
                         "watermelonSprite",
-                        "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
-                        "playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360))",
+                        "clamp(playerSprite.CenterX() + RandomInRange(200, 500)  * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.CenterY() + RandomInRange(200, 300) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -6839,6 +7689,27 @@
                         "=",
                         "0"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitInScene",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "watermelonSprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
                     }
                   ],
                   "events": [
@@ -6847,14 +7718,12 @@
                       "conditions": [
                         {
                           "type": {
-                            "value": "CollisionNP"
+                            "value": "PosX"
                           },
                           "parameters": [
                             "playerSprite",
-                            "watermelonSprite",
-                            "",
-                            "",
-                            ""
+                            ">",
+                            "640"
                           ]
                         }
                       ],
@@ -6866,9 +7735,38 @@
                           "parameters": [
                             "watermelonSprite",
                             "=",
-                            "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
+                            "100",
                             "=",
-                            "playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360))"
+                            "360"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosX"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "<=",
+                            "640"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "watermelonSprite",
+                            "=",
+                            "1000",
+                            "=",
+                            "360"
                           ]
                         }
                       ]
@@ -6897,8 +7795,8 @@
                       "parameters": [
                         "",
                         "orangeSprite",
-                        "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
-                        "playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360))",
+                        "clamp(playerSprite.CenterX() + RandomInRange(100, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.CenterY() + RandomInRange(100, 500) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -6943,10 +7841,32 @@
                         "=",
                         "0"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitInScene",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "orangeSprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
                     }
                   ],
                   "events": [
                     {
+                      "disabled": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -7001,8 +7921,8 @@
                       "parameters": [
                         "",
                         "strawberrySprite",
-                        "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
-                        "playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360))",
+                        "clamp(playerSprite.CenterX() + RandomInRange(100, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.CenterY() + RandomInRange(100, 500) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -7047,10 +7967,32 @@
                         "=",
                         "0"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitInScene",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "strawberrySprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
                     }
                   ],
                   "events": [
                     {
+                      "disabled": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -7073,6 +8015,132 @@
                           },
                           "parameters": [
                             "strawberrySprite",
+                            "=",
+                            "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
+                            "=",
+                            "playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360))"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "FruitSpawn",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "blueberrySprite",
+                        "clamp(playerSprite.CenterX() + RandomInRange(50, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.CenterY() + RandomInRange(50, 500) * sin(Random(360)), 0, SceneWindowHeight())",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetZOrder"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "=",
+                        "4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "Scale",
+                        "=",
+                        "0.3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AddForceAL"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "Random(360)",
+                        "50",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitSpawn",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FruitInScene",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "orangeSprite",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "orangeSprite",
                             "=",
                             "playerSprite.CenterX() + RandomInRange(300, 700) * cos(Random(360))",
                             "=",
@@ -7185,6 +8253,34 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "Destroyed",
+                        "=",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Rotate"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "90",
+                        ""
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -7245,6 +8341,38 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFruitJuice",
+                    "+",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "juiceBar",
+                    "Resizable",
+                    "=",
+                    "(CurrentFruitJuice / MaxFruitJuice) * 175"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerText",
+                    "Text",
+                    "=",
+                    "ToString(CurrentFruitJuice)"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -7256,16 +8384,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "NumberFruit",
-                    "-",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
@@ -7273,27 +8391,6 @@
                     "CurrentExp",
                     "+",
                     "3"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Score",
-                    "+",
-                    "450"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "scoreText",
-                    "Text",
-                    "=",
-                    "\"Score: \" + ToString(Score)"
                   ]
                 },
                 {
@@ -7339,6 +8436,16 @@
                     "\"linear\"",
                     "1",
                     "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "-",
+                    "1"
                   ]
                 },
                 {
@@ -7390,7 +8497,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "+",
                     "1"
                   ]
@@ -7444,9 +8551,50 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "+",
                     "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "watermelonSprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TotalFruit",
+                        "-",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "enemiesLeftText",
+                        "Text",
+                        "=",
+                        "\"Enemies Left: \" + ToString(Variable(TotalFruit))"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -7496,6 +8644,38 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFruitJuice",
+                    "+",
+                    "3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "juiceBar",
+                    "Resizable",
+                    "=",
+                    "(CurrentFruitJuice / MaxFruitJuice) * 175"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerText",
+                    "Text",
+                    "=",
+                    "ToString(CurrentFruitJuice)"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -7507,16 +8687,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "NumberFruit",
-                    "-",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
@@ -7524,27 +8694,6 @@
                     "CurrentExp",
                     "+",
                     "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Score",
-                    "+",
-                    "225"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "scoreText",
-                    "Text",
-                    "=",
-                    "\"Score: \" + ToString(Score)"
                   ]
                 },
                 {
@@ -7590,6 +8739,16 @@
                     "\"linear\"",
                     "1",
                     "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "-",
+                    "1"
                   ]
                 },
                 {
@@ -7641,7 +8800,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "+",
                     "1"
                   ]
@@ -7695,7 +8854,7 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "+",
                     "1"
                   ]
@@ -7749,9 +8908,50 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "NumberFruit",
+                    "FruitInScene",
                     "+",
                     "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "orangeSprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TotalFruit",
+                        "-",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "enemiesLeftText",
+                        "Text",
+                        "=",
+                        "\"Enemies Left: \" + ToString(Variable(TotalFruit))"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -7801,6 +9001,38 @@
                 },
                 {
                   "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFruitJuice",
+                    "=",
+                    "min(MaxFruitJuice, CurrentFruitJuice + 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "juiceBar",
+                    "Resizable",
+                    "=",
+                    "(CurrentFruitJuice / MaxFruitJuice) * 175"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerText",
+                    "Text",
+                    "=",
+                    "ToString(floor(CurrentFruitJuice))"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -7812,16 +9044,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "NumberFruit",
-                    "-",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberObjectVariable"
                   },
                   "parameters": [
@@ -7829,27 +9051,6 @@
                     "CurrentExp",
                     "+",
                     "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Score",
-                    "+",
-                    "75"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "scoreText",
-                    "Text",
-                    "=",
-                    "\"Score: \" + ToString(Score)"
                   ]
                 },
                 {
@@ -7907,6 +9108,478 @@
                     "\"linear\"",
                     "1",
                     "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "blueberrySprite",
+                    "strawberrySprite.X(\"Center\") - 30",
+                    "strawberrySprite.Y(\"Center\") + 30",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Scale",
+                    "=",
+                    "0.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Random(360)",
+                    "50",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "blueberrySprite",
+                    "strawberrySprite.X(\"Center\") + 30",
+                    "strawberrySprite.Y(\"Center\") + 30",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Scale",
+                    "=",
+                    "0.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Random(360)",
+                    "50",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "blueberrySprite",
+                    "strawberrySprite.X(\"Center\") - 30",
+                    "strawberrySprite.Y(\"Center\") - 30",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Scale",
+                    "=",
+                    "0.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Random(360)",
+                    "50",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "blueberrySprite",
+                    "strawberrySprite.X(\"Center\") + 30",
+                    "strawberrySprite.Y(\"Center\") - 30",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Scale",
+                    "=",
+                    "0.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceAL"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Random(360)",
+                    "50",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "+",
+                    "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "strawberrySprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TotalFruit",
+                        "-",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "enemiesLeftText",
+                        "Text",
+                        "=",
+                        "\"Enemies Left: \" + ToString(Variable(TotalFruit))"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "bulletSprite",
+                    "blueberrySprite",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Destroyed",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "bulletSprite",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentFruitJuice",
+                    "=",
+                    "min(MaxFruitJuice, CurrentFruitJuice + 0.25)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "juiceBar",
+                    "Resizable",
+                    "=",
+                    "(CurrentFruitJuice / MaxFruitJuice) * 175"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerText",
+                    "Text",
+                    "=",
+                    "ToString(floor(CurrentFruitJuice))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Destroyed",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "CurrentExp",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ClearForces"
+                  },
+                  "parameters": [
+                    "blueberrySprite"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Animation",
+                    "=",
+                    "\"Explosion\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "-",
+                    "25",
+                    "-",
+                    "30"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "blueberrySprite",
+                    "Tween",
+                    "\"Fade\"",
+                    "0",
+                    "\"linear\"",
+                    "1",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FruitInScene",
+                    "+",
+                    "1"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
+                        "SpawnedFruit",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TotalFruit",
+                        "-",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "enemiesLeftText",
+                        "Text",
+                        "=",
+                        "\"Enemies Left: \" + ToString(Variable(TotalFruit))"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -8044,7 +9717,7 @@
                         "playerSprite",
                         "CurrentHealth",
                         "-",
-                        "6"
+                        "24"
                       ]
                     },
                     {
@@ -8175,7 +9848,7 @@
                         "playerSprite",
                         "CurrentHealth",
                         "-",
-                        "3"
+                        "12"
                       ]
                     },
                     {
@@ -8263,6 +9936,137 @@
                       },
                       "parameters": [
                         "strawberrySprite",
+                        "Destroyed",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "CurrentHealth",
+                        ">",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "ShieldPowerInAction",
+                        "=",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "CurrentHealth",
+                        "-",
+                        "4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "healthText",
+                        "Text",
+                        "=",
+                        "ToString(playerSprite.CurrentHealth)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetX"
+                      },
+                      "parameters": [
+                        "healthText",
+                        "=",
+                        "healthBarSprite.X(\"HealthCenter\") - (healthText.Width() / 2)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                      },
+                      "parameters": [
+                        "healthSprite",
+                        "Resizable",
+                        "=",
+                        "(playerSprite.CurrentHealth / playerSprite.MaxHealth) * 232"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "Opacity",
+                        "=",
+                        "255"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "playerSprite",
+                        "blueberrySprite",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "blueberrySprite",
                         "Destroyed",
                         "False",
                         ""
@@ -8544,200 +10348,27 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "CompareTimer"
+                    "value": "NumberVariable"
                   },
                   "parameters": [
-                    "",
-                    "\"levelTimer\"",
-                    "<=",
-                    "Variable(LevelDuration)"
+                    "TotalFruit",
+                    "=",
+                    "0"
                   ]
                 },
                 {
                   "type": {
-                    "value": "BooleanObjectVariable"
+                    "value": "SceneInstancesCount"
                   },
                   "parameters": [
-                    "playerSprite",
-                    "TimeSkipInAction",
-                    "False",
-                    ""
+                    "",
+                    "Fruit",
+                    "=",
+                    "0"
                   ]
                 }
               ],
               "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "levelTimeText",
-                    "Text",
-                    "=",
-                    "ToString(Variable(LevelDuration) - round(TimerElapsedTime(\"levelTimer\")))"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CompareTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"levelTimer\"",
-                    "<=",
-                    "Variable(LevelDuration) + (10 * Variable(TimeBoostsUsed))"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "TimeSkipInAction",
-                    "True",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "levelTimeText",
-                    "Text",
-                    "=",
-                    "ToString(Variable(ElapsedTime))"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CompareTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"levelTimer\"",
-                    ">=",
-                    "Variable(LevelDuration)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "TimeSkipInAction",
-                    "False",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "levelTimeText",
-                    "Text",
-                    "=",
-                    "\"0\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "FadeMusicVolume"
-                  },
-                  "parameters": [
-                    "",
-                    "0",
-                    "0",
-                    "0.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Wait"
-                  },
-                  "parameters": [
-                    "0.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Level Completed\"",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CompareTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"levelTimer\"",
-                    ">=",
-                    "Variable(LevelDuration) + (10 * Variable(TimeBoostsUsed))"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "TimeSkipInAction",
-                    "True",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                  },
-                  "parameters": [
-                    "levelTimeText",
-                    "Text",
-                    "=",
-                    "\"0\""
-                  ]
-                },
                 {
                   "type": {
                     "value": "FadeMusicVolume"
@@ -9511,6 +11142,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -9660,7 +11292,7 @@
                       },
                       "parameters": [
                         "",
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "89",
                         "382",
                         "\"UI\""
@@ -9672,7 +11304,7 @@
                       },
                       "parameters": [
                         "",
-                        "powerSprite",
+                        "juiceBar",
                         "296",
                         "655",
                         "\"UI\""
@@ -9683,7 +11315,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetWidth"
                       },
                       "parameters": [
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "Resizable",
                         "=",
                         "580"
@@ -9694,7 +11326,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetWidth"
                       },
                       "parameters": [
-                        "powerSprite",
+                        "juiceBar",
                         "Resizable",
                         "=",
                         "166"
@@ -9705,7 +11337,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetHeight"
                       },
                       "parameters": [
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "Resizable",
                         "=",
                         "580"
@@ -9716,7 +11348,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetHeight"
                       },
                       "parameters": [
-                        "powerSprite",
+                        "juiceBar",
                         "Resizable",
                         "=",
                         "26"
@@ -9840,7 +11472,7 @@
                       },
                       "parameters": [
                         "",
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "89",
                         "382",
                         "\"UI\""
@@ -9852,7 +11484,7 @@
                       },
                       "parameters": [
                         "",
-                        "powerSprite",
+                        "juiceBar",
                         "296",
                         "655",
                         "\"UI\""
@@ -9863,7 +11495,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetWidth"
                       },
                       "parameters": [
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "Resizable",
                         "=",
                         "580"
@@ -9874,7 +11506,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetWidth"
                       },
                       "parameters": [
-                        "powerSprite",
+                        "juiceBar",
                         "Resizable",
                         "=",
                         "166"
@@ -9885,7 +11517,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetHeight"
                       },
                       "parameters": [
-                        "powerBarSprite",
+                        "juiceBarSprite",
                         "Resizable",
                         "=",
                         "580"
@@ -9896,7 +11528,7 @@
                         "value": "ResizableCapability::ResizableBehavior::SetHeight"
                       },
                       "parameters": [
-                        "powerSprite",
+                        "juiceBar",
                         "Resizable",
                         "=",
                         "26"
@@ -10309,6 +11941,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -10440,7 +12073,7 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "powerSprite",
+                    "juiceBar",
                     "Resizable",
                     "=",
                     "0"
@@ -10459,7 +12092,7 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "powerBarSprite",
+                    "juiceBarSprite",
                     ""
                   ]
                 },
@@ -10468,7 +12101,7 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "powerSprite",
+                    "juiceBar",
                     ""
                   ]
                 }
@@ -10575,7 +12208,7 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "powerSprite",
+                    "durationBarSprite",
                     "Resizable",
                     "=",
                     "0"
@@ -10594,22 +12227,14 @@
                     "value": "Delete"
                   },
                   "parameters": [
-                    "powerBarSprite",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "powerSprite",
+                    "durationBarSprite",
                     ""
                   ]
                 }
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -10677,7 +12302,7 @@
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
-                    "powerSprite",
+                    "durationBarSprite",
                     "Resizable",
                     "=",
                     "169 * (1 - TimerElapsedTime(\"powerTimer\") / 5)"
@@ -10693,6 +12318,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "EXP Gain Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -10804,7 +12430,7 @@
                     "expSprite",
                     "Resizable",
                     "=",
-                    "232"
+                    "230"
                   ]
                 },
                 {
@@ -10954,7 +12580,7 @@
                     "expSprite",
                     "Resizable",
                     "=",
-                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 232"
+                    "(playerSprite.CurrentExp / playerSprite.MaxExp) * 230"
                   ]
                 }
               ],
@@ -11078,44 +12704,11 @@
                             },
                             {
                               "type": {
-                                "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                              },
-                              "parameters": [
-                                "powerSprite",
-                                "Resizable",
-                                "=",
-                                "26"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                              },
-                              "parameters": [
-                                "powerBarSprite",
-                                "Resizable",
-                                "=",
-                                "580"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                              },
-                              "parameters": [
-                                "powerSprite",
-                                "Resizable",
-                                "=",
-                                "166"
-                              ]
-                            },
-                            {
-                              "type": {
                                 "value": "Create"
                               },
                               "parameters": [
                                 "",
-                                "powerSprite",
+                                "durationBarSprite",
                                 "296",
                                 "655",
                                 "\"UI\""
@@ -11123,14 +12716,13 @@
                             },
                             {
                               "type": {
-                                "value": "Create"
+                                "value": "ResizableCapability::ResizableBehavior::SetHeight"
                               },
                               "parameters": [
-                                "",
-                                "powerBarSprite",
-                                "89",
-                                "382",
-                                "\"UI\""
+                                "durationBarSprite",
+                                "Resizable",
+                                "=",
+                                "26"
                               ]
                             },
                             {
@@ -11138,10 +12730,10 @@
                                 "value": "ResizableCapability::ResizableBehavior::SetWidth"
                               },
                               "parameters": [
-                                "powerBarSprite",
+                                "durationBarSprite",
                                 "Resizable",
                                 "=",
-                                "580"
+                                "169"
                               ]
                             },
                             {
@@ -11177,9 +12769,108 @@
                                 ""
                               ]
                             }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[0]",
+                                    "=",
+                                    "\"0\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[1]",
+                                    "=",
+                                    "\"0\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[2]",
+                                    "=",
+                                    "\"0\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "abilitySprite",
+                                    "Id",
+                                    "=",
+                                    "1"
+                                  ]
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                  },
+                                  "parameters": [
+                                    "abilitySprite",
+                                    "Animation",
+                                    "=",
+                                    "\"Heat Shield\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                                  },
+                                  "parameters": [
+                                    "abilitySprite",
+                                    "Opacity",
+                                    "=",
+                                    "255"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[0]",
+                                    "=",
+                                    "0"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[0]",
+                                    "=",
+                                    "\"0\""
+                                  ]
+                                }
+                              ],
+                              "actions": []
+                            }
                           ]
                         },
                         {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -11341,6 +13032,7 @@
                           ]
                         },
                         {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -11428,7 +13120,19 @@
                             {
                               "type": "BuiltinCommonInstructions::ForEach",
                               "object": "Fruit",
-                              "conditions": [],
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Distance"
+                                  },
+                                  "parameters": [
+                                    "playerSprite",
+                                    "Fruit",
+                                    "400",
+                                    ""
+                                  ]
+                                }
+                              ],
                               "actions": [
                                 {
                                   "type": {
@@ -11454,7 +13158,7 @@
                                     "value": "SetNumberVariable"
                                   },
                                   "parameters": [
-                                    "NumberFruit",
+                                    "FruitInScene",
                                     "-",
                                     "1"
                                   ]
@@ -11469,19 +13173,643 @@
                                     "250",
                                     "1"
                                   ]
+                                }
+                              ],
+                              "events": [
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareStrings"
+                                      },
+                                      "parameters": [
+                                        "Fruit.ObjectName()",
+                                        "=",
+                                        "\"watermelonSprite\""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "watermelonSprite",
+                                        "Animation",
+                                        "=",
+                                        "\"Explosion\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetXY"
+                                      },
+                                      "parameters": [
+                                        "watermelonSprite",
+                                        "-",
+                                        "20",
+                                        "-",
+                                        "60"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                      },
+                                      "parameters": [
+                                        "watermelonSprite",
+                                        "Tween",
+                                        "\"Fade\"",
+                                        "0",
+                                        "\"linear\"",
+                                        "1",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "orangeSprite",
+                                        "watermelonSprite.X()",
+                                        "watermelonSprite.Y() + 100",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "=",
+                                        "2"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "Scale",
+                                        "=",
+                                        "0.5"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "orangeSprite",
+                                        "watermelonSprite.X() + 100",
+                                        "watermelonSprite.Y() + 100",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "=",
+                                        "2"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "Scale",
+                                        "=",
+                                        "0.5"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AddForceAL"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
+                                        "50",
+                                        "1"
+                                      ]
+                                    }
+                                  ]
                                 },
                                 {
-                                  "type": {
-                                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                                  },
-                                  "parameters": [
-                                    "Fruit",
-                                    "Tween",
-                                    "\"Fade\"",
-                                    "0",
-                                    "\"linear\"",
-                                    "0.5",
-                                    "yes"
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareStrings"
+                                      },
+                                      "parameters": [
+                                        "Fruit.ObjectName()",
+                                        "=",
+                                        "\"orangeSprite\""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "Animation",
+                                        "=",
+                                        "\"Explosion\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetXY"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "-",
+                                        "30",
+                                        "-",
+                                        "40"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                      },
+                                      "parameters": [
+                                        "orangeSprite",
+                                        "Tween",
+                                        "\"Fade\"",
+                                        "0",
+                                        "\"linear\"",
+                                        "1",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "strawberrySprite",
+                                        "orangeSprite.X()",
+                                        "orangeSprite.Y() + 100",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "=",
+                                        "3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "strawberrySprite",
+                                        "orangeSprite.X() + 100",
+                                        "orangeSprite.Y() + 100",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "=",
+                                        "3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "strawberrySprite",
+                                        "orangeSprite.X() + 50",
+                                        "orangeSprite.Y() - 10",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "=",
+                                        "3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AddForceAL"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
+                                        "50",
+                                        "1"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareStrings"
+                                      },
+                                      "parameters": [
+                                        "Fruit.ObjectName()",
+                                        "=",
+                                        "\"strawberrySprite\""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "Animation",
+                                        "=",
+                                        "\"Explosion\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetXY"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "-",
+                                        "30",
+                                        "-",
+                                        "40"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                      },
+                                      "parameters": [
+                                        "strawberrySprite",
+                                        "Tween",
+                                        "\"Fade\"",
+                                        "0",
+                                        "\"linear\"",
+                                        "1",
+                                        "yes"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "blueberrySprite",
+                                        "strawberrySprite.X(\"Center\") - 30",
+                                        "strawberrySprite.Y(\"Center\") + 30",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "=",
+                                        "4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "blueberrySprite",
+                                        "strawberrySprite.X(\"Center\") + 30",
+                                        "strawberrySprite.Y(\"Center\") + 30",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "=",
+                                        "4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "blueberrySprite",
+                                        "strawberrySprite.X(\"Center\") - 30",
+                                        "strawberrySprite.Y(\"Center\") - 30",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "=",
+                                        "4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Create"
+                                      },
+                                      "parameters": [
+                                        "",
+                                        "blueberrySprite",
+                                        "strawberrySprite.X(\"Center\") + 30",
+                                        "strawberrySprite.Y(\"Center\") - 30",
+                                        ""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetZOrder"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "=",
+                                        "4"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Scale",
+                                        "=",
+                                        "0.3"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetNumberVariable"
+                                      },
+                                      "parameters": [
+                                        "FruitInScene",
+                                        "+",
+                                        "1"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "AddForceAL"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "AngleBetweenPositions(playerSprite.CenterX(), playerSprite.CenterY(), Fruit.CenterX(), Fruit.CenterY())",
+                                        "50",
+                                        "1"
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "BuiltinCommonInstructions::Standard",
+                                  "conditions": [
+                                    {
+                                      "type": {
+                                        "value": "BuiltinCommonInstructions::CompareStrings"
+                                      },
+                                      "parameters": [
+                                        "Fruit.ObjectName()",
+                                        "=",
+                                        "\"blueberrySprite\""
+                                      ]
+                                    }
+                                  ],
+                                  "actions": [
+                                    {
+                                      "type": {
+                                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Animation",
+                                        "=",
+                                        "\"Explosion\""
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "SetXY"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "-",
+                                        "25",
+                                        "-",
+                                        "30"
+                                      ]
+                                    },
+                                    {
+                                      "type": {
+                                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                                      },
+                                      "parameters": [
+                                        "blueberrySprite",
+                                        "Tween",
+                                        "\"Fade\"",
+                                        "0",
+                                        "\"linear\"",
+                                        "1",
+                                        "yes"
+                                      ]
+                                    }
                                   ]
                                 }
                               ]
@@ -32964,6 +35292,233 @@
               "effects": [],
               "behaviors": [],
               "content": []
+            },
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "SelectText",
+              "persistentUuid": "4479140e-a070-4b3d-86fd-1f9dceab4ed6",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Select",
+              "font": "MPLUS1p-Black.ttf",
+              "textAlignment": "center",
+              "characterSize": 15,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Select",
+                "font": "MPLUS1p-Black.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 15,
+                "lineHeight": 0,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "HeatShieldSprite",
+              "persistentUuid": "307b6ff7-3149-48fb-872b-c2e014554994",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets/Heat Shield Ability Sprite.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 104,
+                            "y": 88
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 176
+                              },
+                              {
+                                "x": 0,
+                                "y": 176
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "DryFreezeSprite",
+              "persistentUuid": "a858e1de-f441-42ad-a2cb-e463a5947cb7",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets/Dry Ice Ability Sprite.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 104,
+                            "y": 88
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 176
+                              },
+                              {
+                                "x": 0,
+                                "y": 176
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "PanSlamSprite",
+              "persistentUuid": "bc8c9535-5b8b-4492-bbdb-ff7f04e8fc54",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "assets/Pan Slam Ability Sprite.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 104,
+                            "y": 88
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 0
+                              },
+                              {
+                                "x": 208,
+                                "y": 176
+                              },
+                              {
+                                "x": 0,
+                                "y": 176
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "objectsFolderStructure": {
@@ -32979,7 +35534,19 @@
                 "objectName": "UpgradeDescription"
               },
               {
+                "objectName": "SelectText"
+              },
+              {
                 "objectName": "Confirm"
+              },
+              {
+                "objectName": "HeatShieldSprite"
+              },
+              {
+                "objectName": "DryFreezeSprite"
+              },
+              {
+                "objectName": "PanSlamSprite"
               }
             ]
           },
@@ -33068,15 +35635,31 @@
               "angle": 0,
               "customSize": true,
               "depth": 24,
-              "height": 24,
+              "height": 33,
               "keepRatio": true,
               "layer": "",
               "name": "Confirm",
               "persistentUuid": "fb691c3f-e1bb-4f0b-af4e-0bc50b7000ad",
               "width": 96,
               "x": 48,
-              "y": 200,
+              "y": 191,
               "zOrder": 2,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "SelectText",
+              "persistentUuid": "c8b8914a-bccf-4c8b-8c7b-fa9290c16623",
+              "width": 0,
+              "x": 71,
+              "y": 197,
+              "zOrder": 3,
               "numberProperties": [],
               "stringProperties": [],
               "initialVariables": []
@@ -33235,6 +35818,29 @@
                       "parameters": [
                         "\"Shield\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "HeatShieldSprite",
+                        "96",
+                        "138",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "HeatShieldSprite",
+                        "Scale",
+                        "=",
+                        "0.5"
+                      ]
                     }
                   ]
                 },
@@ -33272,6 +35878,29 @@
                       "parameters": [
                         "\"Freeze\""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "DryFreezeSprite",
+                        "96",
+                        "138",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "DryFreezeSprite",
+                        "Scale",
+                        "=",
+                        "0.5"
+                      ]
                     }
                   ]
                 },
@@ -33308,6 +35937,29 @@
                       },
                       "parameters": [
                         "\"Blast\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "PanSlamSprite",
+                        "96",
+                        "138",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ScalableCapability::ScalableBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "PanSlamSprite",
+                        "Scale",
+                        "=",
+                        "0.5"
                       ]
                     }
                   ]
