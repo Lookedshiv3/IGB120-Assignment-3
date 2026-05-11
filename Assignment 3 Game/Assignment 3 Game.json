@@ -863,6 +863,14 @@
         "name": "assets/Ability Cooldown Ready Sprite.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Heat Shield Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Heat Shield Sprite.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -1593,7 +1601,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.32505980105705173,
+        "zoomFactor": 0.46816279652894993,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -6902,6 +6910,67 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "heatShieldSprite",
+          "persistentUuid": "1a0dec55-7c84-49a4-8be3-ed8b590aa9c8",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Heat Shield Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 520,
+                        "y": 560
+                      },
+                      "centerPoint": {
+                        "automatic": false,
+                        "name": "centre",
+                        "x": 520,
+                        "y": 560
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 384,
+                            "y": 448
+                          },
+                          {
+                            "x": 656,
+                            "y": 448
+                          },
+                          {
+                            "x": 656,
+                            "y": 672
+                          },
+                          {
+                            "x": 384,
+                            "y": 672
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -7038,6 +7107,9 @@
           },
           {
             "objectName": "cooldownSprite"
+          },
+          {
+            "objectName": "heatShieldSprite"
           }
         ]
       },
@@ -7669,17 +7741,6 @@
                 },
                 {
                   "type": {
-                    "value": "BooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "ShieldPowerInAction",
-                    "False",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "BuiltinCommonInstructions::Once"
                   },
                   "parameters": []
@@ -7834,40 +7895,10 @@
                     ""
                   ]
                 }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanObjectVariable"
-                      },
-                      "parameters": [
-                        "playerSprite",
-                        "ShieldPowerInAction",
-                        "True",
-                        "2"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
-                      },
-                      "parameters": [
-                        "playerSprite",
-                        "Animation",
-                        "=",
-                        "\"Shield Idle\""
-                      ]
-                    }
-                  ]
-                }
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -13636,6 +13667,15 @@
                 },
                 {
                   "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "heatShieldSprite",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -15629,7 +15669,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Ability Used",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -17156,7 +17195,7 @@
                     "durationBarSprite",
                     "Resizable",
                     "=",
-                    "26"
+                    "46"
                   ]
                 },
                 {
@@ -17172,13 +17211,35 @@
                 },
                 {
                   "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                    "value": "Create"
                   },
                   "parameters": [
-                    "playerSprite",
-                    "Animation",
+                    "",
+                    "heatShieldSprite",
+                    "playerSprite.X(\"Center\")",
+                    "playerSprite.Y(\"Center\")",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "heatShieldSprite",
+                    "Scale",
                     "=",
-                    "\"Shield Idle\""
+                    "0.5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetZOrder"
+                  },
+                  "parameters": [
+                    "heatShieldSprite",
+                    "=",
+                    "10"
                   ]
                 },
                 {
@@ -18212,6 +18273,46 @@
                         }
                       ]
                     }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "playerSprite",
+                    "ShieldPowerInAction",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "heatShieldSprite",
+                    "=",
+                    "playerSprite.X(\"Center\")",
+                    "=",
+                    "playerSprite.Y(\"Center\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "heatShieldSprite",
+                    "=",
+                    "playerSprite.Angle()"
                   ]
                 }
               ]
