@@ -2197,12 +2197,12 @@
             {
               "name": "MaxHealth",
               "type": "number",
-              "value": 60
+              "value": 25
             },
             {
               "name": "CurrentHealth",
               "type": "number",
-              "value": 60
+              "value": 25
             },
             {
               "name": "AmmoCount",
@@ -4179,7 +4179,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "60",
+          "string": "25",
           "font": "MPLUS1p-Black.ttf",
           "textAlignment": "left",
           "characterSize": 30,
@@ -4202,7 +4202,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "60",
+            "text": "25",
             "font": "MPLUS1p-Black.ttf",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -15669,6 +15669,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Ability Used",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
