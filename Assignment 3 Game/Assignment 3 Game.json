@@ -871,6 +871,14 @@
         "name": "assets/Heat Shield Sprite.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Slam Zone.png",
+        "kind": "image",
+        "metadata": "{\"localFilePath\":\"assets/Slam Zone.png\",\"extension\":\".png\"}",
+        "name": "assets/Slam Zone.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -1720,8 +1728,8 @@
           "name": "playerSprite",
           "persistentUuid": "b52a8de3-f5b1-47ff-83cf-95e45232fbbf",
           "width": 373,
-          "x": 481,
-          "y": 288,
+          "x": 605,
+          "y": 523,
           "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
@@ -2314,20 +2322,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2392,20 +2405,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2458,20 +2476,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2536,20 +2559,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2614,20 +2642,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2680,20 +2713,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2758,20 +2796,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2836,20 +2879,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -2902,20 +2950,25 @@
                       "points": [
                         {
                           "name": "Gun",
-                          "x": 880,
-                          "y": 576
+                          "x": 700,
+                          "y": 590
+                        },
+                        {
+                          "name": "AbilityCenter",
+                          "x": 560,
+                          "y": 560
                         }
                       ],
                       "originPoint": {
                         "name": "origine",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "centerPoint": {
-                        "automatic": true,
+                        "automatic": false,
                         "name": "centre",
-                        "x": 0,
-                        "y": 0
+                        "x": 560,
+                        "y": 590
                       },
                       "customCollisionMask": [
                         [
@@ -5162,7 +5215,13 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "Power Bar Back Sprite.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "TextSpawn",
+                          "x": 390,
+                          "y": 460
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
@@ -5428,7 +5487,23 @@
                     {
                       "hasCustomCollisionMask": true,
                       "image": "assets/Experience Bar Sprite.png",
-                      "points": [],
+                      "points": [
+                        {
+                          "name": "Ability1Cost",
+                          "x": 345,
+                          "y": 490
+                        },
+                        {
+                          "name": "Ability2Cost",
+                          "x": 505,
+                          "y": 490
+                        },
+                        {
+                          "name": "Ability3Cost",
+                          "x": 663,
+                          "y": 490
+                        }
+                      ],
                       "originPoint": {
                         "name": "origine",
                         "x": 0,
@@ -6971,6 +7046,282 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "abilityJuiceText1",
+          "persistentUuid": "461d6ed1-e4ea-42f7-a656-46161dad9c7e",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 2,
+              "leftEdgeAnchor": 1,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 1,
+              "topEdgeAnchor": 2,
+              "useLegacyBottomAndRightAnchors": false
+            }
+          ],
+          "string": "0",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 33,
+            "g": 181,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 5,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "lineHeight": 0,
+            "color": "255;181;33"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "abilityJuiceText2",
+          "persistentUuid": "8a9b6c4d-9db0-49dd-99fe-b15fcb4e874b",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 2,
+              "leftEdgeAnchor": 1,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 1,
+              "topEdgeAnchor": 2,
+              "useLegacyBottomAndRightAnchors": false
+            }
+          ],
+          "string": "0",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 33,
+            "g": 181,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 5,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "lineHeight": 0,
+            "color": "255;181;33"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "abilityJuiceText3",
+          "persistentUuid": "87baa668-2dcd-49b8-81d4-3e7f0a056ca2",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
+              "bottomEdgeAnchor": 2,
+              "leftEdgeAnchor": 1,
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 1,
+              "topEdgeAnchor": 2,
+              "useLegacyBottomAndRightAnchors": false
+            }
+          ],
+          "string": "0",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 33,
+            "g": 181,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 5,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 30,
+            "lineHeight": 0,
+            "color": "255;181;33"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": true,
+          "italic": false,
+          "name": "powerUsedText",
+          "persistentUuid": "03884348-3609-4e02-b3ee-e11be216e003",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "string": "0",
+          "font": "MPLUS1p-Black.ttf",
+          "textAlignment": "left",
+          "characterSize": 20,
+          "color": {
+            "b": 33,
+            "g": 181,
+            "r": 255
+          },
+          "content": {
+            "bold": true,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "0",
+            "font": "MPLUS1p-Black.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 20,
+            "lineHeight": 0,
+            "color": "255;181;33"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "slamZoneSprite",
+          "persistentUuid": "81ce8afa-d2b5-44e6-be52-109a7c059e36",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Slam Zone.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 256.5,
+                        "y": 255.5
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 512,
+                            "y": 0
+                          },
+                          {
+                            "x": 512,
+                            "y": 511
+                          },
+                          {
+                            "x": 0,
+                            "y": 511
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -6978,6 +7329,9 @@
         "children": [
           {
             "objectName": "playerSprite"
+          },
+          {
+            "objectName": "slamZoneSprite"
           },
           {
             "objectName": "freezeZoneSprite"
@@ -7025,6 +7379,9 @@
             "objectName": "powerText"
           },
           {
+            "objectName": "powerUsedText"
+          },
+          {
             "objectName": "levelText"
           },
           {
@@ -7065,6 +7422,15 @@
           },
           {
             "objectName": "abilityOptionText1"
+          },
+          {
+            "objectName": "abilityJuiceText1"
+          },
+          {
+            "objectName": "abilityJuiceText2"
+          },
+          {
+            "objectName": "abilityJuiceText3"
           },
           {
             "objectName": "abilityOptionText2"
@@ -7194,15 +7560,6 @@
                 },
                 {
                   "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"powerUpSpawnTimer\""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "ResizableCapability::ResizableBehavior::SetWidth"
                   },
                   "parameters": [
@@ -7214,19 +7571,32 @@
                 },
                 {
                   "type": {
-                    "value": "Wait"
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
-                    "0.5"
+                    "powerText",
+                    "Text",
+                    "=",
+                    "ToString(floor(CurrentFruitJuice))"
                   ]
                 },
                 {
                   "type": {
-                    "value": "ResetTimer"
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
-                    "",
-                    "\"levelTimer\""
+                    "levelText",
+                    "Text",
+                    "=",
+                    "\"Lvl: \" + ToString(PlayerLevel)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.5"
                   ]
                 },
                 {
@@ -7540,8 +7910,8 @@
                   },
                   "parameters": [
                     "playerSprite",
-                    "MouseX() + 10",
-                    "MouseY() + 10",
+                    "MouseX()",
+                    "MouseY()",
                     "0",
                     ""
                   ]
@@ -7799,7 +8169,7 @@
                   "parameters": [
                     "bulletSprite",
                     "=",
-                    "-1"
+                    "0"
                   ]
                 },
                 {
@@ -9947,7 +10317,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -11814,6 +12183,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Level Completed",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11899,6 +12269,7 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -12346,6 +12717,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -12389,6 +12761,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -13978,6 +14351,17 @@
                     "=",
                     "21"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "levelText",
+                    "Text",
+                    "=",
+                    "\"Lvl: \" + ToString(PlayerLevel)"
+                  ]
                 }
               ]
             },
@@ -15217,6 +15601,7 @@
                   ],
                   "events": [
                     {
+                      "folded": true,
                       "type": "BuiltinCommonInstructions::Standard",
                       "conditions": [
                         {
@@ -15279,6 +15664,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText1",
+                                "expBarSprite.X(\"Ability1Cost\")",
+                                "expBarSprite.Y(\"Ability1Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText1",
+                                "Text",
+                                "=",
+                                "\"10\""
+                              ]
                             }
                           ]
                         },
@@ -15318,6 +15726,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText1",
+                                "expBarSprite.X(\"Ability1Cost\")",
+                                "expBarSprite.Y(\"Ability1Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText1",
+                                "Text",
+                                "=",
+                                "\"15\""
+                              ]
                             }
                           ]
                         },
@@ -15356,6 +15787,29 @@
                                 "Opacity",
                                 "=",
                                 "255"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText1",
+                                "expBarSprite.X(\"Ability1Cost\")",
+                                "expBarSprite.Y(\"Ability1Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText1",
+                                "Text",
+                                "=",
+                                "\"25\""
                               ]
                             }
                           ]
@@ -15426,6 +15880,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText2",
+                                "expBarSprite.X(\"Ability2Cost\")",
+                                "expBarSprite.Y(\"Ability2Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText2",
+                                "Text",
+                                "=",
+                                "\"10\""
+                              ]
                             }
                           ]
                         },
@@ -15465,6 +15942,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText2",
+                                "expBarSprite.X(\"Ability2Cost\")",
+                                "expBarSprite.Y(\"Ability2Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText2",
+                                "Text",
+                                "=",
+                                "\"15\""
+                              ]
                             }
                           ]
                         },
@@ -15503,6 +16003,29 @@
                                 "Opacity",
                                 "=",
                                 "255"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText2",
+                                "expBarSprite.X(\"Ability2Cost\")",
+                                "expBarSprite.Y(\"Ability2Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText2",
+                                "Text",
+                                "=",
+                                "\"25\""
                               ]
                             }
                           ]
@@ -15573,6 +16096,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText3",
+                                "expBarSprite.X(\"Ability3Cost\")",
+                                "expBarSprite.Y(\"Ability3Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText3",
+                                "Text",
+                                "=",
+                                "\"10\""
+                              ]
                             }
                           ]
                         },
@@ -15612,6 +16158,29 @@
                                 "=",
                                 "255"
                               ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText3",
+                                "expBarSprite.X(\"Ability3Cost\")",
+                                "expBarSprite.Y(\"Ability3Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText3",
+                                "Text",
+                                "=",
+                                "\"15\""
+                              ]
                             }
                           ]
                         },
@@ -15650,6 +16219,29 @@
                                 "Opacity",
                                 "=",
                                 "255"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Create"
+                              },
+                              "parameters": [
+                                "",
+                                "abilityJuiceText3",
+                                "expBarSprite.X(\"Ability3Cost\")",
+                                "expBarSprite.Y(\"Ability3Cost\")",
+                                "\"UI\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                              },
+                              "parameters": [
+                                "abilityJuiceText3",
+                                "Text",
+                                "=",
+                                "\"25\""
                               ]
                             }
                           ]
@@ -15675,7 +16267,6 @@
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -17147,6 +17738,57 @@
               "actions": [
                 {
                   "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "powerUsedText",
+                    "juiceBarSprite.X(\"TextSpawn\")",
+                    "juiceBarSprite.Y(\"TextSpawn\")",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Text",
+                    "=",
+                    "ToString(10)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"FadeOut\"",
+                    "0",
+                    "\"linear\"",
+                    "0.5",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"MoveUp\"",
+                    "610",
+                    "\"linear\"",
+                    "0.5",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -17217,8 +17859,8 @@
                   "parameters": [
                     "",
                     "heatShieldSprite",
-                    "playerSprite.X(\"Center\")",
-                    "playerSprite.Y(\"Center\")",
+                    "playerSprite.X(\"AbilityCenter\")",
+                    "playerSprite.Y(\"AbilityCenter\")",
                     ""
                   ]
                 },
@@ -17280,6 +17922,57 @@
               "actions": [
                 {
                   "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "powerUsedText",
+                    "juiceBarSprite.X(\"TextSpawn\")",
+                    "juiceBarSprite.Y(\"TextSpawn\")",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Text",
+                    "=",
+                    "ToString(15)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"FadeOut\"",
+                    "0",
+                    "\"linear\"",
+                    "0.5",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"MoveUp\"",
+                    "610",
+                    "\"linear\"",
+                    "0.5",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -17296,8 +17989,8 @@
                   "parameters": [
                     "",
                     "iceSprite",
-                    "playerSprite.X(\"Center\")",
-                    "playerSprite.Y(\"Center\") - 30",
+                    "playerSprite.X(\"AbilityCenter\")",
+                    "playerSprite.Y(\"AbilityCenter\") - 30",
                     ""
                   ]
                 },
@@ -17329,8 +18022,8 @@
                   "parameters": [
                     "",
                     "iceSprite",
-                    "playerSprite.X(\"Center\") - 30",
-                    "playerSprite.Y(\"Center\") + 30",
+                    "playerSprite.X(\"AbilityCenter\") - 30",
+                    "playerSprite.Y(\"AbilityCenter\") + 30",
                     ""
                   ]
                 },
@@ -17362,8 +18055,8 @@
                   "parameters": [
                     "",
                     "iceSprite",
-                    "playerSprite.X(\"Center\") + 30",
-                    "playerSprite.Y(\"Center\") + 30",
+                    "playerSprite.X(\"AbilityCenter\") + 30",
+                    "playerSprite.Y(\"AbilityCenter\") + 30",
                     ""
                   ]
                 },
@@ -17447,6 +18140,57 @@
               "actions": [
                 {
                   "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "powerUsedText",
+                    "juiceBarSprite.X(\"TextSpawn\")",
+                    "juiceBarSprite.Y(\"TextSpawn\")",
+                    "\"UI\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Text",
+                    "=",
+                    "ToString(25)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"FadeOut\"",
+                    "0",
+                    "\"linear\"",
+                    "0.5",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "powerUsedText",
+                    "Tween",
+                    "\"MoveUp\"",
+                    "610",
+                    "\"linear\"",
+                    "0.5",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetBooleanObjectVariable"
                   },
                   "parameters": [
@@ -17486,9 +18230,9 @@
                   "parameters": [
                     "GroundBreak",
                     "=",
-                    "playerSprite.CenterX()",
+                    "playerSprite.X(\"AbilityCenter\")",
                     "=",
-                    "playerSprite.CenterY()"
+                    "playerSprite.Y(\"AbilityCenter\")"
                   ]
                 },
                 {
@@ -17536,6 +18280,49 @@
                     "False",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "slamZoneSprite",
+                    "playerSprite.X(\"AbilityCenter\")",
+                    "playerSprite.Y(\"AbilityCenter\")",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    "Opacity",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    "Scale",
+                    "=",
+                    "0.7"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    "\"despawnTimer\""
+                  ]
                 }
               ],
               "events": [
@@ -17545,12 +18332,13 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "Distance"
+                        "value": "CollisionNP"
                       },
                       "parameters": [
-                        "playerSprite",
                         "Fruit",
-                        "300",
+                        "slamZoneSprite",
+                        "",
+                        "",
                         ""
                       ]
                     },
@@ -18301,9 +19089,9 @@
                   "parameters": [
                     "heatShieldSprite",
                     "=",
-                    "playerSprite.X(\"Center\")",
+                    "playerSprite.X(\"AbilityCenter\")",
                     "=",
-                    "playerSprite.Y(\"Center\")"
+                    "playerSprite.Y(\"AbilityCenter\")"
                   ]
                 },
                 {
@@ -18314,6 +19102,48 @@
                     "heatShieldSprite",
                     "=",
                     "playerSprite.Angle()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareObjectTimer"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    "\"despawnTimer\"",
+                    ">=",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "RemoveObjectTimer"
+                  },
+                  "parameters": [
+                    "slamZoneSprite",
+                    "\"despawnTimer\""
                   ]
                 }
               ]
@@ -18360,6 +19190,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
