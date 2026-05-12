@@ -879,6 +879,14 @@
         "name": "assets/Slam Zone.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Ability Cost Info Sprite.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Ability Cost Info Sprite.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -1609,7 +1617,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.46816279652894993,
+        "zoomFactor": 1.1088591791236984,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -2083,7 +2091,7 @@
           "width": 0,
           "x": 1009,
           "y": 559,
-          "zOrder": 20,
+          "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2115,7 +2123,7 @@
           "width": 0,
           "x": 1172,
           "y": 559,
-          "zOrder": 22,
+          "zOrder": 21,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -2181,6 +2189,78 @@
           "width": 56,
           "x": 1185,
           "y": 634,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 58,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilityCostBoardSprite",
+          "opacity": 0,
+          "persistentUuid": "46eff148-bc85-493b-aa3b-4196126e29f1",
+          "width": 72,
+          "x": 1018.5,
+          "y": 529,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 57,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilityCostBoardSprite",
+          "opacity": 0,
+          "persistentUuid": "20473db0-5815-465b-bec4-480fa640912e",
+          "width": 71,
+          "x": 1098.5,
+          "y": 530,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 58,
+          "keepRatio": true,
+          "layer": "UI",
+          "name": "abilityCostBoardSprite",
+          "opacity": 0,
+          "persistentUuid": "08cf082f-a048-4901-8e36-ff28c65bda79",
+          "width": 72,
+          "x": 1177.5,
+          "y": 529,
           "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
@@ -7322,6 +7402,78 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "abilityCostBoardSprite",
+          "persistentUuid": "ae2a4c67-8a9b-4d18-8833-d4b263a5bff4",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Id",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Active",
+              "type": "boolean",
+              "value": false
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Ability Cost Info Sprite.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 143,
+                            "y": 0
+                          },
+                          {
+                            "x": 143,
+                            "y": 112
+                          },
+                          {
+                            "x": 0,
+                            "y": 112
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -7329,6 +7481,9 @@
         "children": [
           {
             "objectName": "playerSprite"
+          },
+          {
+            "objectName": "abilityCostBoardSprite"
           },
           {
             "objectName": "slamZoneSprite"
@@ -9298,8 +9453,8 @@
                       "parameters": [
                         "",
                         "watermelonSprite",
-                        "clamp(playerSprite.CenterX() + RandomInRange(400, 500)  * cos(Random(360)), 0, SceneWindowWidth())",
-                        "clamp(playerSprite.CenterY() + RandomInRange(400, 300) * sin(Random(360)), 0, SceneWindowHeight())",
+                        "clamp(playerSprite.X(\"AbilityCenter\") + RandomInRange(400, 500)  * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.Y(\"AbilityCenter\") + RandomInRange(400, 300) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -9450,8 +9605,8 @@
                       "parameters": [
                         "",
                         "orangeSprite",
-                        "clamp(playerSprite.CenterX() + RandomInRange(300, 500) * cos(Random(360)), 0, SceneWindowWidth())",
-                        "clamp(playerSprite.CenterY() + RandomInRange(300, 500) * sin(Random(360)), 0, SceneWindowHeight())",
+                        "clamp(playerSprite.X(\"AbilityCenter\") + RandomInRange(300, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.Y(\"AbilityCenter\") + RandomInRange(300, 500) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -9576,8 +9731,8 @@
                       "parameters": [
                         "",
                         "strawberrySprite",
-                        "clamp(playerSprite.CenterX() + RandomInRange(200, 500) * cos(Random(360)), 0, SceneWindowWidth())",
-                        "clamp(playerSprite.CenterY() + RandomInRange(200, 500) * sin(Random(360)), 0, SceneWindowHeight())",
+                        "clamp(playerSprite.X(\"AbilityCenter\") + RandomInRange(200, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.Y(\"AbilityCenter\") + RandomInRange(200, 500) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -9702,8 +9857,8 @@
                       "parameters": [
                         "",
                         "blueberrySprite",
-                        "clamp(playerSprite.CenterX() + RandomInRange(200, 500) * cos(Random(360)), 0, SceneWindowWidth())",
-                        "clamp(playerSprite.CenterY() + RandomInRange(200, 500) * sin(Random(360)), 0, SceneWindowHeight())",
+                        "clamp(playerSprite.X(\"AbilityCenter\") + RandomInRange(200, 500) * cos(Random(360)), 0, SceneWindowWidth())",
+                        "clamp(playerSprite.Y(\"AbilityCenter\") + RandomInRange(200, 500) * sin(Random(360)), 0, SceneWindowHeight())",
                         ""
                       ]
                     },
@@ -14186,7 +14341,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Level up",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15664,29 +15818,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText1",
-                                "expBarSprite.X(\"Ability1Cost\")",
-                                "expBarSprite.Y(\"Ability1Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText1",
-                                "Text",
-                                "=",
-                                "\"10\""
-                              ]
                             }
                           ]
                         },
@@ -15726,29 +15857,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText1",
-                                "expBarSprite.X(\"Ability1Cost\")",
-                                "expBarSprite.Y(\"Ability1Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText1",
-                                "Text",
-                                "=",
-                                "\"15\""
-                              ]
                             }
                           ]
                         },
@@ -15787,29 +15895,6 @@
                                 "Opacity",
                                 "=",
                                 "255"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText1",
-                                "expBarSprite.X(\"Ability1Cost\")",
-                                "expBarSprite.Y(\"Ability1Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText1",
-                                "Text",
-                                "=",
-                                "\"25\""
                               ]
                             }
                           ]
@@ -15880,29 +15965,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText2",
-                                "expBarSprite.X(\"Ability2Cost\")",
-                                "expBarSprite.Y(\"Ability2Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText2",
-                                "Text",
-                                "=",
-                                "\"10\""
-                              ]
                             }
                           ]
                         },
@@ -15942,29 +16004,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText2",
-                                "expBarSprite.X(\"Ability2Cost\")",
-                                "expBarSprite.Y(\"Ability2Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText2",
-                                "Text",
-                                "=",
-                                "\"15\""
-                              ]
                             }
                           ]
                         },
@@ -16003,29 +16042,6 @@
                                 "Opacity",
                                 "=",
                                 "255"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText2",
-                                "expBarSprite.X(\"Ability2Cost\")",
-                                "expBarSprite.Y(\"Ability2Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText2",
-                                "Text",
-                                "=",
-                                "\"25\""
                               ]
                             }
                           ]
@@ -16096,29 +16112,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText3",
-                                "expBarSprite.X(\"Ability3Cost\")",
-                                "expBarSprite.Y(\"Ability3Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText3",
-                                "Text",
-                                "=",
-                                "\"10\""
-                              ]
                             }
                           ]
                         },
@@ -16158,29 +16151,6 @@
                                 "=",
                                 "255"
                               ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText3",
-                                "expBarSprite.X(\"Ability3Cost\")",
-                                "expBarSprite.Y(\"Ability3Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText3",
-                                "Text",
-                                "=",
-                                "\"15\""
-                              ]
                             }
                           ]
                         },
@@ -16219,29 +16189,6 @@
                                 "Opacity",
                                 "=",
                                 "255"
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "Create"
-                              },
-                              "parameters": [
-                                "",
-                                "abilityJuiceText3",
-                                "expBarSprite.X(\"Ability3Cost\")",
-                                "expBarSprite.Y(\"Ability3Cost\")",
-                                "\"UI\""
-                              ]
-                            },
-                            {
-                              "type": {
-                                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-                              },
-                              "parameters": [
-                                "abilityJuiceText3",
-                                "Text",
-                                "=",
-                                "\"25\""
                               ]
                             }
                           ]
@@ -21133,6 +21080,881 @@
                 }
               ],
               "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Ability Cost Info",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "abilitySprite",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[0]",
+                        "!=",
+                        "\"0\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "255"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "abilityJuiceText1",
+                        "abilityCostBoardSprite.X(\"Center\") ",
+                        "abilityCostBoardSprite.Y(\"Center\")",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetZOrder"
+                      },
+                      "parameters": [
+                        "abilityJuiceText1",
+                        "=",
+                        "21"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[0]",
+                            "=",
+                            "\"Heat Shield\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "Text",
+                            "=",
+                            "\"10\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText1.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText1.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[0]",
+                            "=",
+                            "\"Dry Freeze\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "Text",
+                            "=",
+                            "\"15\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText1.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText1.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[0]",
+                            "=",
+                            "\"Pan Slam\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "Text",
+                            "=",
+                            "\"25\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText1",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText1.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText1.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[1]",
+                        "!=",
+                        "\"0\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "255"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "abilityJuiceText2",
+                        "abilityCostBoardSprite.X(\"Center\") ",
+                        "abilityCostBoardSprite.Y(\"Center\")",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetZOrder"
+                      },
+                      "parameters": [
+                        "abilityJuiceText2",
+                        "=",
+                        "21"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[1]",
+                            "=",
+                            "\"Heat Shield\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "Text",
+                            "=",
+                            "\"10\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText2.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText2.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[1]",
+                            "=",
+                            "\"Dry Freeze\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "Text",
+                            "=",
+                            "\"15\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText2.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText2.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[1]",
+                            "=",
+                            "\"Pan Slam\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "Text",
+                            "=",
+                            "\"25\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText2",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText2.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText2.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[2]",
+                        "!=",
+                        "\"0\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "255"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "abilityJuiceText3",
+                        "abilityCostBoardSprite.X(\"Center\") ",
+                        "abilityCostBoardSprite.Y(\"Center\")",
+                        "\"UI\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetZOrder"
+                      },
+                      "parameters": [
+                        "abilityJuiceText3",
+                        "=",
+                        "21"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[2]",
+                            "=",
+                            "\"Heat Shield\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "Text",
+                            "=",
+                            "\"10\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText3.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText3.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[2]",
+                            "=",
+                            "\"Dry Freeze\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "Text",
+                            "=",
+                            "\"15\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText3.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText3.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "PlayerInventory[2]",
+                            "=",
+                            "\"Pan Slam\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "Text",
+                            "=",
+                            "\"25\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetXY"
+                          },
+                          "parameters": [
+                            "abilityJuiceText3",
+                            "=",
+                            "abilityCostBoardSprite.CenterX() - (abilityJuiceText3.Width() / 2)",
+                            "=",
+                            "abilityCostBoardSprite.CenterY() - (abilityJuiceText3.Height() / 2)"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "abilityCostBoardSprite",
+                    "Active",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "abilitySprite",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityJuiceText1",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityJuiceText2",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilitySprite",
+                        "Id",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Id",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "OpacityCapability::OpacityBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "abilityJuiceText3",
+                        "Opacity",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanObjectVariable"
+                      },
+                      "parameters": [
+                        "abilityCostBoardSprite",
+                        "Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []
