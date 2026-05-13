@@ -1617,7 +1617,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.1088591791236984,
+        "zoomFactor": 0.42382612737716546,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -23111,7 +23111,7 @@
                   "parameters": [
                     "Level",
                     "=",
-                    "1"
+                    "2"
                   ]
                 }
               ],
