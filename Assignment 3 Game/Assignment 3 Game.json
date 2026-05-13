@@ -10111,7 +10111,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11399,7 +11398,7 @@
                   "parameters": [
                     "CurrentExp",
                     "+",
-                    "500"
+                    "2"
                   ]
                 },
                 {
