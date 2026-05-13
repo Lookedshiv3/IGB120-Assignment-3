@@ -951,7 +951,7 @@
     {
       "name": "MaxExp",
       "type": "number",
-      "value": 10
+      "value": 25
     },
     {
       "name": "CurrentExp",
@@ -10111,7 +10111,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11399,7 +11398,7 @@
                   "parameters": [
                     "CurrentExp",
                     "+",
-                    "2"
+                    "500"
                   ]
                 },
                 {
@@ -14309,40 +14308,10 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "EXP Gain Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "CurrentExp",
-                    ">=",
-                    "MaxExp"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetBooleanObjectVariable"
-                  },
-                  "parameters": [
-                    "playerSprite",
-                    "LevelUp",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
-            }
-          ],
+          "events": [],
           "parameters": []
         },
         {
@@ -14402,9 +14371,19 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
+                    "PlayerLevel",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
                     "CurrentExp",
                     "=",
-                    "0"
+                    "CurrentExp - MaxExp"
                   ]
                 },
                 {
@@ -14419,104 +14398,6 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "PlayerLevel",
-                    "+",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetAngle"
-                  },
-                  "parameters": [
-                    "UpgradePanel",
-                    "+",
-                    "270\n"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetZOrder"
-                  },
-                  "parameters": [
-                    "UpgradePanel",
-                    "=",
-                    "20"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
-                  },
-                  "parameters": [
-                    "UpgradePanel",
-                    "Resizable",
-                    "=",
-                    "465"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
-                  },
-                  "parameters": [
-                    "UpgradePanel",
-                    "Resizable",
-                    "=",
-                    "709"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "UpgradeChoices",
-                    "353",
-                    "201",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "UpgradeChoices",
-                    "555",
-                    "201",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "UpgradeChoices",
-                    "756",
-                    "201",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetZOrder"
-                  },
-                  "parameters": [
-                    "UpgradeChoices",
-                    "=",
-                    "21"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "TextContainerCapability::TextContainerBehavior::SetValue"
                   },
                   "parameters": [
@@ -14524,6 +14405,60 @@
                     "Text",
                     "=",
                     "\"Lvl: \" + ToString(PlayerLevel)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "NewUpgradeCard",
+                        "353",
+                        "201",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "NewUpgradeCard",
+                        "756",
+                        "201",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "NewUpgradeCard",
+                        "555",
+                        "201",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetZOrder"
+                      },
+                      "parameters": [
+                        "UpgradeChoices",
+                        "=",
+                        "21"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -14558,16 +14493,28 @@
               ],
               "events": [
                 {
-                  "type": "BuiltinCommonInstructions::ForEach",
-                  "object": "UpgradeChoices",
-                  "conditions": [],
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentExp",
+                        ">=",
+                        "MaxExp"
+                      ]
+                    }
+                  ],
                   "actions": [
                     {
                       "type": {
-                        "value": "Delete"
+                        "value": "SetBooleanObjectVariable"
                       },
                       "parameters": [
-                        "UpgradeChoices",
+                        "playerSprite",
+                        "LevelUp",
+                        "True",
                         ""
                       ]
                     }
@@ -14628,6 +14575,32 @@
                       ],
                       "events": [
                         {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "PickAllInstances"
+                              },
+                              "parameters": [
+                                "",
+                                "UpgradeChoices"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Delete"
+                              },
+                              "parameters": [
+                                "NewUpgradeCard",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -14715,6 +14688,7 @@
                           ]
                         },
                         {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -14924,6 +14898,7 @@
                           ]
                         },
                         {
+                          "folded": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
