@@ -903,7 +903,47 @@
   "objectsFolderStructure": {
     "folderName": "__ROOT"
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "UpgradeChoices",
+      "objects": [
+        {
+          "name": "NewUpgradeCard"
+        }
+      ]
+    },
+    {
+      "name": "Powers",
+      "objects": [
+        {
+          "name": "infiniteAmmoPowerSprite"
+        },
+        {
+          "name": "shieldPowerSprite"
+        },
+        {
+          "name": "timeSkipPowerSprite"
+        }
+      ]
+    },
+    {
+      "name": "Fruit",
+      "objects": [
+        {
+          "name": "watermelonSprite"
+        },
+        {
+          "name": "orangeSprite"
+        },
+        {
+          "name": "strawberrySprite"
+        },
+        {
+          "name": "blueberrySprite"
+        }
+      ]
+    }
+  ],
   "variables": [
     {
       "name": "Score",
@@ -1641,47 +1681,7 @@
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
-      "objectsGroups": [
-        {
-          "name": "Powers",
-          "objects": [
-            {
-              "name": "infiniteAmmoPowerSprite"
-            },
-            {
-              "name": "shieldPowerSprite"
-            },
-            {
-              "name": "timeSkipPowerSprite"
-            }
-          ]
-        },
-        {
-          "name": "Fruit",
-          "objects": [
-            {
-              "name": "watermelonSprite"
-            },
-            {
-              "name": "orangeSprite"
-            },
-            {
-              "name": "strawberrySprite"
-            },
-            {
-              "name": "blueberrySprite"
-            }
-          ]
-        },
-        {
-          "name": "UpgradeChoices",
-          "objects": [
-            {
-              "name": "NewUpgradeCard"
-            }
-          ]
-        }
-      ],
+      "objectsGroups": [],
       "variables": [
         {
           "name": "FruitSpawn",
@@ -23254,36 +23254,7 @@
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
       },
-      "objectsGroups": [
-        {
-          "name": "Powers",
-          "objects": [
-            {
-              "name": "infiniteAmmoPowerSprite"
-            },
-            {
-              "name": "shieldPowerSprite"
-            },
-            {
-              "name": "timeSkipPowerSprite"
-            }
-          ]
-        },
-        {
-          "name": "Fruit",
-          "objects": [
-            {
-              "name": "watermelonSprite"
-            },
-            {
-              "name": "orangeSprite"
-            },
-            {
-              "name": "strawberrySprite"
-            }
-          ]
-        }
-      ],
+      "objectsGroups": [],
       "variables": [
         {
           "name": "FruitSpawn",
@@ -50693,7 +50664,7 @@
             "gridColor": 10401023,
             "gridAlpha": 0.8,
             "snap": false,
-            "zoomFactor": 2.015404060146112,
+            "zoomFactor": 2.5420467439853596,
             "windowMask": false,
             "selectedLayer": "",
             "gameEditorMode": "instances-editor"
