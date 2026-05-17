@@ -896,12 +896,166 @@
         "name": "assets/Cross.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/blueberry squish.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/blueberry squish.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },
-  "objects": [],
+  "objects": [
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "FrozenLayer",
+      "persistentUuid": "685b0de3-87b4-49ba-8a70-bda911d80615",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "expSprite",
+      "persistentUuid": "279d87d6-507f-4a0f-b184-01878bd1a1dd",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior",
+          "bottomEdgeAnchor": 2,
+          "leftEdgeAnchor": 1,
+          "relativeToOriginalWindowSize": true,
+          "rightEdgeAnchor": 1,
+          "topEdgeAnchor": 2,
+          "useLegacyBottomAndRightAnchors": false
+        }
+      ],
+      "animations": [
+        {
+          "name": "Exp Bar Front",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/Exp Bar Front.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 464,
+                        "y": 0
+                      },
+                      {
+                        "x": 464,
+                        "y": 96
+                      },
+                      {
+                        "x": 0,
+                        "y": 96
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "objectsFolderStructure": {
-    "folderName": "__ROOT"
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "FrozenLayer"
+      },
+      {
+        "objectName": "expSprite"
+      }
+    ]
   },
   "objectsGroups": [
     {
@@ -1625,6 +1779,10 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
+        {
           "name": "Animation",
           "type": "AnimatableCapability::AnimatableBehavior"
         },
@@ -1676,7 +1834,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6742648686213258,
+        "zoomFactor": 1.0038463012845542,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -5642,79 +5800,6 @@
           ]
         },
         {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "expSprite",
-          "persistentUuid": "279d87d6-507f-4a0f-b184-01878bd1a1dd",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Anchor",
-              "type": "AnchorBehavior::AnchorBehavior",
-              "bottomEdgeAnchor": 2,
-              "leftEdgeAnchor": 1,
-              "relativeToOriginalWindowSize": true,
-              "rightEdgeAnchor": 1,
-              "topEdgeAnchor": 2,
-              "useLegacyBottomAndRightAnchors": false
-            }
-          ],
-          "animations": [
-            {
-              "name": "Exp Bar Front",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "assets/Exp Bar Front.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 464,
-                            "y": 0
-                          },
-                          {
-                            "x": 464,
-                            "y": 96
-                          },
-                          {
-                            "x": 0,
-                            "y": 96
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "assetStoreId": "",
           "bottomMargin": 0,
           "height": 256,
@@ -5826,68 +5911,6 @@
                           {
                             "x": 0,
                             "y": 192
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "FrozenLayer",
-          "persistentUuid": "685b0de3-87b4-49ba-8a70-bda911d80615",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": [
-            {
-              "name": "NewSprite",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "metadata": "{\"pskl\":{}}",
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "NewSprite",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 0
-                          },
-                          {
-                            "x": 64,
-                            "y": 64
-                          },
-                          {
-                            "x": 0,
-                            "y": 64
                           }
                         ]
                       ]
@@ -7541,9 +7564,6 @@
             "objectName": "expBarBack"
           },
           {
-            "objectName": "expSprite"
-          },
-          {
             "objectName": "ammoText"
           },
           {
@@ -7637,9 +7657,6 @@
             "objectName": "UpgradePanel"
           },
           {
-            "objectName": "FrozenLayer"
-          },
-          {
             "objectName": "GroundBreak"
           },
           {
@@ -7659,7 +7676,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Setup",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7694,7 +7710,7 @@
                   "parameters": [
                     "",
                     "Fruity Blast Background Music By Diva (Cut).mp3",
-                    "0",
+                    "1",
                     "yes",
                     "",
                     ""
@@ -7707,8 +7723,8 @@
                   "parameters": [
                     "",
                     "0",
-                    "100",
-                    "2"
+                    "50",
+                    "5"
                   ]
                 },
                 {
@@ -7884,7 +7900,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Pause",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -7928,6 +7943,17 @@
                     "TopDownMovement",
                     "yes"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetMusicChannelVolume"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "=",
+                    "20"
+                  ]
                 }
               ]
             },
@@ -7953,6 +7979,17 @@
                   "parameters": [
                     "",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetMusicChannelVolume"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "=",
+                    "50"
                   ]
                 }
               ]
@@ -10131,7 +10168,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11358,7 +11394,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -11398,6 +11433,18 @@
                   },
                   "parameters": [
                     "bulletSprite",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "assets/blueberry squish.mp3",
+                    "",
+                    "",
                     ""
                   ]
                 },
@@ -23295,6 +23342,11 @@
           "name": "TimeBoostsUsed",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "Paused",
+          "type": "boolean",
+          "value": false
         }
       ],
       "instances": [
@@ -26656,7 +26708,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Pause",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -26840,7 +26891,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fruit Spawn",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -39379,6 +39429,10 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
+        {
           "name": "Animation",
           "type": "AnimatableCapability::AnimatableBehavior"
         },
@@ -40099,6 +40153,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
         {
           "name": "Animation",
           "type": "AnimatableCapability::AnimatableBehavior"
