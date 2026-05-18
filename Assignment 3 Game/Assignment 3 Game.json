@@ -1240,6 +1240,11 @@
       "name": "Level",
       "type": "number",
       "value": 1
+    },
+    {
+      "name": "TorchEmitting",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
@@ -19995,24 +20000,20 @@
                 },
                 {
                   "type": {
-                    "value": "ParticleSystem::EmitterAngle"
+                    "value": "SetBooleanVariable"
                   },
                   "parameters": [
-                    "Torch_Attack",
-                    "=",
-                    "AngleBetweenPositions(playerSprite.PointX(\"Gun\"), playerSprite.PointY(\"Gun\"), MouseX(), MouseY())"
+                    "TorchEmitting",
+                    "True",
+                    ""
                   ]
                 },
                 {
                   "type": {
-                    "value": "SetXY"
+                    "value": "Wait"
                   },
                   "parameters": [
-                    "Torch_Attack",
-                    "=",
-                    "playerSprite.PointX(\"Gun\")",
-                    "=",
-                    "playerSprite.PointY(\"Gun\")"
+                    "4"
                   ]
                 },
                 {
@@ -20039,27 +20040,24 @@
                 },
                 {
                   "type": {
-                    "value": "Wait"
-                  },
-                  "parameters": [
-                    "4"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "ParticleSystem::StopEmission"
                   },
                   "parameters": [
                     "Torch_Attack"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "TorchEmitting",
+                    "False",
+                    ""
+                  ]
                 }
               ],
               "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": []
-                },
                 {
                   "folded": true,
                   "type": "BuiltinCommonInstructions::ForEach",
@@ -20803,6 +20801,45 @@
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TorchEmitting",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Torch_Attack",
+                    "=",
+                    "playerSprite.PointX(\"Gun\")",
+                    "=",
+                    "playerSprite.PointY(\"Gun\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Torch_Attack",
+                    "=",
+                    "playerSprite.Angle()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": []
             },
@@ -20841,7 +20878,7 @@
                   "parameters": [
                     "heatShieldSprite",
                     "=",
-                    "playerSprite.Angle()"
+                    "playerSprite.le()"
                   ]
                 }
               ]
