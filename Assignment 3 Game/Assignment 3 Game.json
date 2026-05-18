@@ -8465,6 +8465,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Shooting Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -20055,6 +20056,12 @@
               ],
               "events": [
                 {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                },
+                {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "Fruit",
                   "conditions": [
@@ -20793,6 +20800,11 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
