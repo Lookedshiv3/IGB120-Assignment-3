@@ -15941,90 +15941,90 @@
                                   ]
                                 }
                               ]
-                            },
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "TextContainerCapability::TextContainerBehavior::Value"
+                              },
+                              "parameters": [
+                                "UpgradeChoices",
+                                "Text",
+                                "contains",
+                                "\"Torch\""
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
                             {
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
                                   "type": {
-                                    "value": "TextContainerCapability::TextContainerBehavior::Value"
+                                    "value": "StringVariable"
                                   },
                                   "parameters": [
-                                    "UpgradeChoices",
-                                    "Text",
-                                    "contains",
+                                    "PlayerInventory[0]",
+                                    "!=",
+                                    "\"Torch\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[1]",
+                                    "!=",
+                                    "\"Torch\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "StringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[2]",
+                                    "!=",
                                     "\"Torch\""
                                   ]
                                 }
                               ],
-                              "actions": [],
-                              "events": [
+                              "actions": [
                                 {
-                                  "type": "BuiltinCommonInstructions::Standard",
-                                  "conditions": [
-                                    {
-                                      "type": {
-                                        "value": "StringVariable"
-                                      },
-                                      "parameters": [
-                                        "PlayerInventory[0]",
-                                        "!=",
-                                        "\"Torch\""
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "StringVariable"
-                                      },
-                                      "parameters": [
-                                        "PlayerInventory[1]",
-                                        "!=",
-                                        "\"Torch\""
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "StringVariable"
-                                      },
-                                      "parameters": [
-                                        "PlayerInventory[2]",
-                                        "!=",
-                                        "\"Torch\""
-                                      ]
-                                    }
-                                  ],
-                                  "actions": [
-                                    {
-                                      "type": {
-                                        "value": "SetStringVariable"
-                                      },
-                                      "parameters": [
-                                        "PlayerInventory[NumAbilities]",
-                                        "=",
-                                        "\"Torch\""
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "SetNumberVariable"
-                                      },
-                                      "parameters": [
-                                        "NumAbilities",
-                                        "+",
-                                        "1"
-                                      ]
-                                    },
-                                    {
-                                      "type": {
-                                        "value": "SetBooleanObjectVariable"
-                                      },
-                                      "parameters": [
-                                        "playerSprite",
-                                        "UpdateAbility",
-                                        "True",
-                                        ""
-                                      ]
-                                    }
+                                  "type": {
+                                    "value": "SetStringVariable"
+                                  },
+                                  "parameters": [
+                                    "PlayerInventory[NumAbilities]",
+                                    "=",
+                                    "\"Torch\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "NumAbilities",
+                                    "+",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetBooleanObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "playerSprite",
+                                    "UpdateAbility",
+                                    "True",
+                                    ""
                                   ]
                                 }
                               ]
@@ -16231,7 +16231,7 @@
                                 "abilitySprite",
                                 "Animation",
                                 "=",
-                                "\"Torch\""
+                                "\"Flamethrower\""
                               ]
                             },
                             {
@@ -16416,7 +16416,7 @@
                                 "abilitySprite",
                                 "Animation",
                                 "=",
-                                "\"Torch\""
+                                "\"Flamethrower\""
                               ]
                             },
                             {
@@ -16601,7 +16601,7 @@
                                 "abilitySprite",
                                 "Animation",
                                 "=",
-                                "\"Torch\""
+                                "\"Flamethrower\""
                               ]
                             },
                             {
@@ -17268,11 +17268,6 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": []
                 }
               ]
             },
@@ -19900,7 +19895,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -19998,11 +19992,24 @@
                 },
                 {
                   "type": {
-                    "value": "ResetTimer"
+                    "value": "SetXY"
                   },
                   "parameters": [
-                    "",
-                    "\"TorchTimer\""
+                    "Torch_Attack",
+                    "=",
+                    "playerSprite.PointX(\"Gun\")",
+                    "=",
+                    "playerSprite.PointY(\"Gun\")"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Torch_Attack",
+                    "=",
+                    "playerSprite.Angle()"
                   ]
                 },
                 {
@@ -20026,10 +20033,20 @@
                     "False",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"TorchTimer\""
+                  ]
                 }
               ],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "Fruit",
                   "conditions": [
@@ -20039,7 +20056,7 @@
                       },
                       "parameters": [
                         "Fruit",
-                        "slamZoneSprite",
+                        "Torch_Attack",
                         "",
                         "",
                         ""
@@ -20862,7 +20879,7 @@
                     "Torch_Attack",
                     "\"despawnTimer\"",
                     ">=",
-                    "5"
+                    "3"
                   ]
                 },
                 {
