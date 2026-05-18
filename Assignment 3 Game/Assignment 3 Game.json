@@ -906,6 +906,22 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Continue button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Continue button.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Continue_button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Continue_button.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -1703,7 +1719,7 @@
               },
               "parameters": [
                 "",
-                "\"Story_Select_1\"",
+                "\"Guide_Screen\"",
                 ""
               ]
             }
@@ -40184,6 +40200,486 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        }
+      ]
+    },
+    {
+      "b": 255,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Guide_95Screen",
+      "name": "Guide_Screen",
+      "r": 247,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 249,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 758,
+          "layer": "",
+          "name": "Background",
+          "persistentUuid": "8b8900a9-7ad4-46a2-93e5-abd8843427d7",
+          "width": 1308,
+          "x": -16,
+          "y": -22,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 430,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewText",
+          "persistentUuid": "50225196-1fa5-4d44-85b5-7c4a9f12d9b2",
+          "width": 831,
+          "x": 230,
+          "y": 78,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 225,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Continue",
+          "persistentUuid": "f8282675-95fa-4ff8-b1ac-adf007f45575",
+          "width": 463,
+          "x": 423,
+          "y": 466,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Background",
+          "persistentUuid": "6579959e-b527-4f85-94dd-358422130516",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Level Select.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 1672,
+                            "y": 0
+                          },
+                          {
+                            "x": 1672,
+                            "y": 941
+                          },
+                          {
+                            "x": 0,
+                            "y": 941
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "NewText",
+          "persistentUuid": "66c5e694-0dbd-4a4b-ae13-430885ca3110",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Basic Controls: \nWASD movement\nLeft Click to Shoot \n\nAbilities: \nOnce you level up you can select 1 ability to add to a slot. Use the respective number key (1, 2, or 3) to use the ability \n\n",
+          "font": "",
+          "textAlignment": "center",
+          "characterSize": 36,
+          "color": {
+            "b": 35,
+            "g": 166,
+            "r": 245
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Basic Controls: \nWASD movement\nLeft Click to Shoot \n\nAbilities: \nOnce you level up you can select 1 ability to add to a slot. Use the respective number key (1, 2, or 3) to use the ability \n\n",
+            "font": "",
+            "textAlignment": "center",
+            "verticalTextAlignment": "top",
+            "characterSize": 36,
+            "lineHeight": 0,
+            "color": "245;166;35"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Continue",
+          "persistentUuid": "40b066be-e306-40af-905f-3a5e9b6d9758",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [
+            {
+              "effectType": "Glow",
+              "name": "Effect",
+              "doubleParameters": {
+                "distance": 15,
+                "innerStrength": 1,
+                "outerStrength": 4
+              },
+              "stringParameters": {
+                "color": "255;255;255"
+              },
+              "booleanParameters": {}
+            }
+          ],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 2.0247e-320
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets/Continue_button.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 23,
+                            "y": 62
+                          },
+                          {
+                            "x": 668,
+                            "y": 62
+                          },
+                          {
+                            "x": 668,
+                            "y": 301
+                          },
+                          {
+                            "x": 23,
+                            "y": 301
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Background"
+          },
+          {
+            "objectName": "NewText"
+          },
+          {
+            "objectName": "Continue"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsHovered"
+              },
+              "parameters": [
+                "Continue",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Continue",
+                "Effect",
+                "\"Effect\"",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "ButtonStates::ButtonFSM::IsHovered"
+              },
+              "parameters": [
+                "Continue",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "EffectCapability::EffectBehavior::EnableEffect"
+              },
+              "parameters": [
+                "Continue",
+                "Effect",
+                "\"Effect\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Continue",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Story_Select_1\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Ambient Hemisphere Light",
+              "doubleParameters": {
+                "elevation": 40,
+                "intensity": 0.33,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "groundColor": "127;127;127",
+                "skyColor": "255;255;255",
+                "top": "Z+"
+              },
+              "booleanParameters": {}
+            },
+            {
+              "effectType": "Scene3D::DirectionalLight",
+              "name": "3D Sun Light",
+              "doubleParameters": {
+                "distanceFromCamera": 1500,
+                "elevation": 40,
+                "frustumSize": 4000,
+                "intensity": 0.75,
+                "minimumShadowBias": 0,
+                "rotation": 300
+              },
+              "stringParameters": {
+                "color": "255;255;255",
+                "shadowQuality": "medium",
+                "top": "Z+"
+              },
+              "booleanParameters": {
+                "isCastingShadow": true
+              }
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "ButtonFSM",
+          "type": "ButtonStates::ButtonFSM"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
     }
