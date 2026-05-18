@@ -1918,7 +1918,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.0038463012845542,
+        "zoomFactor": 0.9087785136062481,
         "windowMask": false,
         "selectedLayer": "",
         "gameEditorMode": "instances-editor"
@@ -8465,7 +8465,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Shooting Controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -10353,6 +10352,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Fruit Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11853,6 +11853,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Player Hit Behaviour",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -19155,6 +19156,7 @@
               ],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "Fruit",
                   "conditions": [
@@ -19936,7 +19938,7 @@
                     "powerUsedText",
                     "Text",
                     "=",
-                    "ToString(30)"
+                    "ToString(15)"
                   ]
                 },
                 {
@@ -19992,6 +19994,16 @@
                 },
                 {
                   "type": {
+                    "value": "ParticleSystem::EmitterAngle"
+                  },
+                  "parameters": [
+                    "Torch_Attack",
+                    "=",
+                    "AngleBetweenPositions(playerSprite.PointX(\"Gun\"), playerSprite.PointY(\"Gun\"), MouseX(), MouseY())"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetXY"
                   },
                   "parameters": [
@@ -20000,16 +20012,6 @@
                     "playerSprite.PointX(\"Gun\")",
                     "=",
                     "playerSprite.PointY(\"Gun\")"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetAngle"
-                  },
-                  "parameters": [
-                    "Torch_Attack",
-                    "=",
-                    "playerSprite.Angle()"
                   ]
                 },
                 {
@@ -20036,17 +20038,23 @@
                 },
                 {
                   "type": {
-                    "value": "ResetTimer"
+                    "value": "Wait"
                   },
                   "parameters": [
-                    "",
-                    "\"TorchTimer\""
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleSystem::StopEmission"
+                  },
+                  "parameters": [
+                    "Torch_Attack"
                   ]
                 }
               ],
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::ForEach",
                   "object": "Fruit",
                   "conditions": [
@@ -20863,48 +20871,6 @@
                   },
                   "parameters": [
                     "slamZoneSprite",
-                    "\"despawnTimer\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CompareObjectTimer"
-                  },
-                  "parameters": [
-                    "Torch_Attack",
-                    "\"despawnTimer\"",
-                    ">=",
-                    "3"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "Torch_Attack",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "RemoveObjectTimer"
-                  },
-                  "parameters": [
-                    "Torch_Attack",
                     "\"despawnTimer\""
                   ]
                 }
@@ -21918,6 +21884,127 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[0]",
+                        "=",
+                        "\"Torch\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Id",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Resizable",
+                        "=",
+                        "48 * (1 - playerSprite.ObjectTimerElapsedTime(\"firstAbilityTimer\")/ 15)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CompareObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"firstAbilityTimer\"",
+                            ">=",
+                            "15"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Animation",
+                            "=",
+                            "\"Ready\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Resizable",
+                            "=",
+                            "48"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "RemoveObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"firstAbilityTimer\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "FirstAbilityCooldown",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"firstAbilityReadyTimer\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
                 }
               ]
             },
@@ -22285,6 +22372,127 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[1]",
+                        "=",
+                        "\"Torch\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Id",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Resizable",
+                        "=",
+                        "48 * (1 - playerSprite.ObjectTimerElapsedTime(\"firstAbilityTimer\")/ 15)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CompareObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"secondAbilityTimer\"",
+                            ">=",
+                            "15"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Animation",
+                            "=",
+                            "\"Ready\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Resizable",
+                            "=",
+                            "48"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "RemoveObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"secondAbilityTimer\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "SecondAbilityCooldown",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"secondAbilityReadyTimer\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
                 }
               ]
             },
@@ -22588,6 +22796,122 @@
                             "\"thirdAbilityTimer\"",
                             ">=",
                             "30"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Animation",
+                            "=",
+                            "\"Ready\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                          },
+                          "parameters": [
+                            "cooldownSprite",
+                            "Resizable",
+                            "=",
+                            "48"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "RemoveObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"thirdAbilityTimer\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanObjectVariable"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "ThirdAbilityCooldown",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"thirdAbilityReadyTimer\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerInventory[2]",
+                        "=",
+                        "\"Torch\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Id",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                      },
+                      "parameters": [
+                        "cooldownSprite",
+                        "Resizable",
+                        "=",
+                        "48 * (1 - playerSprite.ObjectTimerElapsedTime(\"firstAbilityTimer\")/ 15)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CompareObjectTimer"
+                          },
+                          "parameters": [
+                            "playerSprite",
+                            "\"thirdAbilityTimer\"",
+                            ">=",
+                            "15"
                           ]
                         },
                         {
